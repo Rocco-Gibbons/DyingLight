@@ -13,6 +13,14 @@ config_version=4
 config/name="Dying Light"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1440
+window/size/height=1120
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+window/stretch/shrink=5.0
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
