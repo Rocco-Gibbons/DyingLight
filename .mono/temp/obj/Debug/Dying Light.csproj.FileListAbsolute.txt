@@ -1,0 +1,10 @@
+/home/rock-oh/Projects/Godot/Dying_Light/.mono/temp/obj/Debug/Dying Light.csproj.AssemblyReference.cache
+/home/rock-oh/Projects/Godot/Dying_Light/.mono/temp/obj/Debug/Dying Light.GeneratedMSBuildEditorConfig.editorconfig
+/home/rock-oh/Projects/Godot/Dying_Light/.mono/temp/obj/Debug/Dying Light.AssemblyInfoInputs.cache
+/home/rock-oh/Projects/Godot/Dying_Light/.mono/temp/obj/Debug/Dying Light.AssemblyInfo.cs
+/home/rock-oh/Projects/Godot/Dying_Light/.mono/temp/obj/Debug/Dying Light.csproj.CoreCompileInputs.cache
+/home/rock-oh/Projects/Godot/Dying_Light/.mono/temp/obj/Debug/Dying Light.sourcelink.json
+/home/rock-oh/Projects/Godot/Dying_Light/.mono/temp/bin/Debug/Dying Light.dll
+/home/rock-oh/Projects/Godot/Dying_Light/.mono/temp/bin/Debug/Dying Light.pdb
+/home/rock-oh/Projects/Godot/Dying_Light/.mono/temp/obj/Debug/Dying Light.dll
+/home/rock-oh/Projects/Godot/Dying_Light/.mono/temp/obj/Debug/Dying Light.pdb
