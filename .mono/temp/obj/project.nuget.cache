@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ivyHv3y5Jic=",
+  "success": true,
+  "projectFilePath": "/home/rock-oh/Projects/Godot/Dying_Light/Dying Light.csproj",
+  "expectedPackageFiles": [
+    "/home/rock-oh/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.3/microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "/home/rock-oh/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.3/microsoft.netframework.referenceassemblies.net472.1.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

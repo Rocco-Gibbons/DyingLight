@@ -26,109 +26,109 @@ frame_3/delay_sec = 0.0
 anchor_right = 0.2
 anchor_bottom = 0.2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 margin_right = 288.0
 margin_bottom = 224.0
 texture = ExtResource( 10 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="SceneContainer" type="HBoxContainer" parent="."]
 margin_right = 288.0
 margin_bottom = 224.0
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer"]
 margin_right = 9.0
 margin_bottom = 224.0
 size_flags_horizontal = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+[node name="LeftSplitContainer" type="CenterContainer" parent="SceneContainer"]
 margin_left = 13.0
 margin_right = 204.0
 margin_bottom = 224.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/CenterContainer"]
+[node name="TextContainer" type="HBoxContainer" parent="SceneContainer/LeftSplitContainer"]
 margin_top = 62.0
 margin_right = 191.0
 margin_bottom = 161.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/CenterContainer/HBoxContainer"]
+[node name="InnerTextContainer" type="VBoxContainer" parent="SceneContainer/LeftSplitContainer/TextContainer"]
 margin_right = 191.0
 margin_bottom = 99.0
 alignment = 1
 
-[node name="Title" type="TextureRect" parent="HBoxContainer/CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="Title" type="TextureRect" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer"]
 margin_right = 191.0
 margin_bottom = 23.0
 texture = ExtResource( 5 )
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="ButtonContainer" type="CenterContainer" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer"]
 margin_top = 27.0
 margin_right = 191.0
 margin_bottom = 99.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer"]
+[node name="ButtonListContainer" type="VBoxContainer" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer"]
 margin_left = 31.0
 margin_right = 160.0
 margin_bottom = 72.0
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+[node name="NewGameContainer" type="CenterContainer" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer"]
 margin_right = 129.0
 margin_bottom = 15.0
 
-[node name="NewGame" type="TextureButton" parent="HBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/CenterContainer"]
+[node name="NewGame" type="TextureButton" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer/NewGameContainer"]
 margin_left = 17.0
 margin_right = 112.0
 margin_bottom = 15.0
 texture_normal = ExtResource( 2 )
 
-[node name="CenterContainer2" type="CenterContainer" parent="HBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+[node name="ContinueContainer" type="CenterContainer" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer"]
 margin_top = 19.0
 margin_right = 129.0
 margin_bottom = 34.0
 
-[node name="Continue" type="TextureButton" parent="HBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/CenterContainer2"]
+[node name="Continue" type="TextureButton" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer/ContinueContainer"]
 margin_left = 13.0
 margin_right = 116.0
 margin_bottom = 15.0
 texture_normal = ExtResource( 1 )
 
-[node name="CenterContainer3" type="CenterContainer" parent="HBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+[node name="LeaderboardContainer" type="CenterContainer" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer"]
 margin_top = 38.0
 margin_right = 129.0
 margin_bottom = 53.0
 
-[node name="Leaderboard" type="TextureButton" parent="HBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/CenterContainer3"]
+[node name="Leaderboard" type="TextureButton" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer/LeaderboardContainer"]
 margin_right = 129.0
 margin_bottom = 15.0
 texture_normal = ExtResource( 3 )
 
-[node name="CenterContainer4" type="CenterContainer" parent="HBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+[node name="QuitContainer" type="CenterContainer" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer"]
 margin_top = 57.0
 margin_right = 129.0
 margin_bottom = 72.0
 
-[node name="Quit" type="TextureButton" parent="HBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/CenterContainer4"]
+[node name="Quit" type="TextureButton" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer/QuitContainer"]
 margin_left = 37.0
 margin_right = 92.0
 margin_bottom = 15.0
 texture_normal = ExtResource( 4 )
 
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer"]
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="SceneContainer"]
 visible = false
 margin_left = 286.0
 margin_right = 373.0
 margin_bottom = 338.0
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+[node name="RightSplitContainer" type="HBoxContainer" parent="SceneContainer"]
 margin_left = 208.0
 margin_right = 288.0
 margin_bottom = 224.0
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/HBoxContainer"]
+[node name="TorchContainer" type="CenterContainer" parent="SceneContainer/RightSplitContainer"]
 margin_right = 80.0
 margin_bottom = 224.0
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/HBoxContainer/CenterContainer"]
+[node name="Torch" type="TextureRect" parent="SceneContainer/RightSplitContainer/TorchContainer"]
 margin_top = 72.0
 margin_right = 80.0
 margin_bottom = 152.0
