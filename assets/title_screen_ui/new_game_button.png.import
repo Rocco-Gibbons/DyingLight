@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/continue_button_1.png-707d8cce95396e66eb2d3cf9df0305a0.stex"
+path="res://.import/new_game_button.png-1d02a8d250a470a9d9d923dffae7236b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://title_screen_ui/continue_button_1.png"
-dest_files=[ "res://.import/continue_button_1.png-707d8cce95396e66eb2d3cf9df0305a0.stex" ]
+source_file="res://assets/title_screen_ui/new_game_button.png"
+dest_files=[ "res://.import/new_game_button.png-1d02a8d250a470a9d9d923dffae7236b.stex" ]
 
 [params]
 

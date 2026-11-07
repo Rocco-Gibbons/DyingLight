@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/title.png-823584670adafa9049b39177967d518a.stex"
+path="res://.import/quit_button.png-fabd5ce78ff773be95bd6cfaa1c50f4e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://title_screen_ui/title.png"
-dest_files=[ "res://.import/title.png-823584670adafa9049b39177967d518a.stex" ]
+source_file="res://assets/title_screen_ui/quit_button.png"
+dest_files=[ "res://.import/quit_button.png-fabd5ce78ff773be95bd6cfaa1c50f4e.stex" ]
 
 [params]
 
