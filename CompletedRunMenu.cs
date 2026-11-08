@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class CompletedRunMenu : MarginContainer
+public partial class CompletedRunMenu : MarginContainer
 {
 	// Declare member variables here. Examples:
 	// private int a = 2;
@@ -11,13 +11,13 @@ public class CompletedRunMenu : MarginContainer
 	public override void _Ready()
 	{
 		var diveAgainButton = GetNode<TextureButton>("SceneContainer/Parchment/ParchmentContainer/DiveAgainContainer/DiveAgain");
-		diveAgainButton.Connect("pressed", this, nameof(DiveAgainButtonPressed));
+		diveAgainButton.Connect("pressed", new Callable(this, nameof(DiveAgainButtonPressed)));
 		
 		var inventoryButton = GetNode<TextureButton>("SceneContainer/Parchment/ParchmentContainer/ShopContainer/Shop");
-		inventoryButton.Connect("pressed", this, nameof(InventoryButtonPressed));
+		inventoryButton.Connect("pressed", new Callable(this, nameof(InventoryButtonPressed)));
 		
 		var shopButton = GetNode<TextureButton>("SceneContainer/Parchment/ParchmentContainer/ShopContainer/Shop");
-		shopButton.Connect("pressed", this, nameof(ShopButtonPressed));
+		shopButton.Connect("pressed", new Callable(this, nameof(ShopButtonPressed)));
 		
 	}
 
@@ -33,12 +33,12 @@ public class CompletedRunMenu : MarginContainer
 	
 	private void InventoryButtonPressed()
 	{
-		GetTree().ChangeScene("res://Inventory.tscn");
+		GetTree().ChangeSceneToFile("res://Inventory.tscn");
 	}
 
 	private void ShopButtonPressed()
 	{
-		GetTree().ChangeScene("res://Shop.tscn");
+		GetTree().ChangeSceneToFile("res://Shop.tscn");
 	}
 
 }

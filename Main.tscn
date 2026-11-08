@@ -10,8 +10,8 @@
 script = ExtResource( 4 )
 
 [node name="MainMenu" parent="." instance=ExtResource( 3 )]
-margin_right = 288.0
-margin_bottom = 224.0
+offset_right = 288.0
+offset_bottom = 224.0
 
 [node name="Leaderboard" parent="." instance=ExtResource( 2 )]
 visible = false

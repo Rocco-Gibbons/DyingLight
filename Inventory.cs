@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Inventory : MarginContainer
+public partial class Inventory : MarginContainer
 {
 	// Declare member variables here. Examples:
 	// private int a = 2;
@@ -11,18 +11,18 @@ public class Inventory : MarginContainer
 	public override void _Ready()
 	{
 		var backButton = GetNode<TextureButton>("SceneContainer/Parchment/BackArrowContainer/BackArrow");
-		backButton.Connect("pressed", this, nameof(BackArrowPressed));
+		backButton.Connect("pressed", new Callable(this, nameof(BackArrowPressed)));
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(float delta)
 	{
-		if (Input.IsActionJustPressed("go_back")) GetTree().ChangeScene("res://CompletedRunMenu.tscn");      
+		if (Input.IsActionJustPressed("go_back")) GetTree().ChangeSceneToFile("res://CompletedRunMenu.tscn");      
 	}
 	
 	private void BackArrowPressed()
 	{
-		GetTree().ChangeScene("res://CompletedRunMenu.tscn");
+		GetTree().ChangeSceneToFile("res://CompletedRunMenu.tscn");
 	}
 }
 

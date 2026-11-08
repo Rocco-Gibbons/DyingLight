@@ -1,0 +1,6 @@
+/home/dan/Documents/GitHub/DyingLight/.godot/mono/temp/obj/Debug/Dying Light.csproj.AssemblyReference.cache
+/home/dan/Documents/GitHub/DyingLight/.godot/mono/temp/obj/Debug/Dying Light.GeneratedMSBuildEditorConfig.editorconfig
+/home/dan/Documents/GitHub/DyingLight/.godot/mono/temp/obj/Debug/Dying Light.AssemblyInfoInputs.cache
+/home/dan/Documents/GitHub/DyingLight/.godot/mono/temp/obj/Debug/Dying Light.AssemblyInfo.cs
+/home/dan/Documents/GitHub/DyingLight/.godot/mono/temp/obj/Debug/Dying Light.csproj.CoreCompileInputs.cache
+/home/dan/Documents/GitHub/DyingLight/.godot/mono/temp/obj/Debug/Dying Light.sourcelink.json

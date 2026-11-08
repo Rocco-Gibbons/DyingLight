@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Character {
+public partial class Character {
 	public int gold = 100;	
 	public int compass = 0;
 	public int chalk = 0;
@@ -14,7 +14,7 @@ public class Character {
 	public int dungeonLvl = 0;
 }
 
-public class Shop : MarginContainer
+public partial class Shop : MarginContainer
 {
 	// Declare member variables here. Examples:
 	// private int a = 2;
@@ -27,10 +27,10 @@ public class Shop : MarginContainer
 		var gold_label = GetNode<RichTextLabel>("SceneContainer/Parchment/ParchmentContainer/GoldCounter");
 		gold_label.BbcodeEnabled = true;
 		gold_label.Clear();
-		gold_label.BbcodeText = $"[right][color=black]${john.gold}  [/color][/right]";
+		gold_label.Text = $"[right][color=black]${john.gold}  [/color][/right]";
 		
 		var backButton = GetNode<TextureButton>("SceneContainer/Parchment/BackArrowContainer/BackArrow");
-		backButton.Connect("pressed", this, nameof(BackArrowPressed));
+		backButton.Connect("pressed", new Callable(this, nameof(BackArrowPressed)));
 		
 
 	}
@@ -40,7 +40,7 @@ public class Shop : MarginContainer
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(float delta)
 	{
-		if (Input.IsActionJustPressed("go_back")) GetTree().ChangeScene("res://CompletedRunMenu.tscn");      
+		if (Input.IsActionJustPressed("go_back")) GetTree().ChangeSceneToFile("res://CompletedRunMenu.tscn");      
 	}
 	
 	private void CompassInfoButtonPressed()
@@ -357,7 +357,7 @@ public class Shop : MarginContainer
 	
 	private void BackArrowPressed()
 	{
-		GetTree().ChangeScene("res://CompletedRunMenu.tscn");
+		GetTree().ChangeSceneToFile("res://CompletedRunMenu.tscn");
 	}
 
 

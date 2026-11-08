@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class MainMenu : MarginContainer
+public partial class MainMenu : MarginContainer
 {
 	
 
@@ -9,7 +9,7 @@ public class MainMenu : MarginContainer
 	public override void _Ready()
 	{
 		var leaderboardButton = GetNode<TextureButton>("SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer/LeaderboardContainer/Leaderboard");
-		leaderboardButton.Connect("pressed", this, nameof(LeaderboardButtonPressed));
+		leaderboardButton.Connect("pressed", new Callable(this, nameof(LeaderboardButtonPressed)));
 
 	}
 
@@ -21,7 +21,7 @@ public class MainMenu : MarginContainer
 
 	private void LeaderboardButtonPressed()
 	{
-		GetTree().ChangeScene("res://Leaderboard.tscn");
+		GetTree().ChangeSceneToFile("res://Leaderboard.tscn");
 	}
 	
 	private void QuitButtonPressed()

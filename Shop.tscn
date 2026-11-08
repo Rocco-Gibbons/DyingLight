@@ -1,273 +1,273 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://assets/menu_background.png" type="Texture" id=1]
-[ext_resource path="res://assets/parchment.png" type="Texture" id=2]
-[ext_resource path="res://assets/title_screen_ui/text/shop.png" type="Texture" id=3]
+[ext_resource path="res://assets/menu_background.png" type="Texture2D" id=1]
+[ext_resource path="res://assets/parchment.png" type="Texture2D" id=2]
+[ext_resource path="res://assets/title_screen_ui/text/shop.png" type="Texture2D" id=3]
 [ext_resource path="res://Shop.cs" type="Script" id=4]
-[ext_resource path="res://assets/shop_ui/info.png" type="Texture" id=5]
-[ext_resource path="res://assets/shop_ui/compass.png" type="Texture" id=6]
-[ext_resource path="res://assets/Tiny5Duo-VariableFont_BLED,JITT,ROND,wdth,wght.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://assets/shop_ui/torch.png" type="Texture" id=8]
-[ext_resource path="res://assets/shop_ui/chalk.png" type="Texture" id=9]
-[ext_resource path="res://assets/shop_ui/skeletonKey.png" type="Texture" id=10]
-[ext_resource path="res://assets/shop_ui/speedPotion.png" type="Texture" id=11]
-[ext_resource path="res://assets/shop_ui/detector.png" type="Texture" id=12]
-[ext_resource path="res://assets/shop_ui/disarmKit.png" type="Texture" id=13]
-[ext_resource path="res://assets/shop_ui/magnifyingGlass.png" type="Texture" id=14]
-[ext_resource path="res://assets/shop_ui/paper.png" type="Texture" id=15]
-[ext_resource path="res://assets/parchmentInfo.png" type="Texture" id=16]
-[ext_resource path="res://assets/shop_ui/buyIcon.png" type="Texture" id=17]
-[ext_resource path="res://assets/shop_ui/close.png" type="Texture" id=18]
-[ext_resource path="res://assets/back_arrow.png" type="Texture" id=19]
+[ext_resource path="res://assets/shop_ui/info.png" type="Texture2D" id=5]
+[ext_resource path="res://assets/shop_ui/compass.png" type="Texture2D" id=6]
+[ext_resource path="res://assets/Tiny5Duo-VariableFont_BLED,JITT,ROND,wdth,wght.ttf" type="FontFile" id=7]
+[ext_resource path="res://assets/shop_ui/torch.png" type="Texture2D" id=8]
+[ext_resource path="res://assets/shop_ui/chalk.png" type="Texture2D" id=9]
+[ext_resource path="res://assets/shop_ui/skeletonKey.png" type="Texture2D" id=10]
+[ext_resource path="res://assets/shop_ui/speedPotion.png" type="Texture2D" id=11]
+[ext_resource path="res://assets/shop_ui/detector.png" type="Texture2D" id=12]
+[ext_resource path="res://assets/shop_ui/disarmKit.png" type="Texture2D" id=13]
+[ext_resource path="res://assets/shop_ui/magnifyingGlass.png" type="Texture2D" id=14]
+[ext_resource path="res://assets/shop_ui/paper.png" type="Texture2D" id=15]
+[ext_resource path="res://assets/parchmentInfo.png" type="Texture2D" id=16]
+[ext_resource path="res://assets/shop_ui/buyIcon.png" type="Texture2D" id=17]
+[ext_resource path="res://assets/shop_ui/close.png" type="Texture2D" id=18]
+[ext_resource path="res://assets/back_arrow.png" type="Texture2D" id=19]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="FontFile" id=2]
 size = 8
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="FontFile" id=1]
 size = 8
 font_data = ExtResource( 7 )
 
 [node name="Shop" type="MarginContainer"]
-margin_right = 288.0
-margin_bottom = 224.0
-rect_pivot_offset = Vector2( -189, -27 )
+offset_right = 288.0
+offset_bottom = 224.0
+pivot_offset = Vector2( -189, -27 )
 script = ExtResource( 4 )
 
 [node name="Background" type="TextureRect" parent="."]
-margin_right = 288.0
-margin_bottom = 224.0
+offset_right = 288.0
+offset_bottom = 224.0
 texture = ExtResource( 1 )
 
 [node name="SceneContainer" type="CenterContainer" parent="."]
-margin_right = 288.0
-margin_bottom = 224.0
+offset_right = 288.0
+offset_bottom = 224.0
 
 [node name="Parchment" type="TextureRect" parent="SceneContainer"]
-margin_right = 288.0
-margin_bottom = 224.0
+offset_right = 288.0
+offset_bottom = 224.0
 texture = ExtResource( 2 )
 
 [node name="ParchmentContainer" type="VBoxContainer" parent="SceneContainer/Parchment"]
-margin_left = 50.0
-margin_top = 21.0
-margin_right = 237.0
-margin_bottom = 195.0
+offset_left = 50.0
+offset_top = 21.0
+offset_right = 237.0
+offset_bottom = 195.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer"]
-margin_right = 187.0
+offset_right = 187.0
 
 [node name="GoldCounter" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer"]
-margin_top = 4.0
-margin_right = 187.0
-margin_bottom = 14.0
+offset_top = 4.0
+offset_right = 187.0
+offset_bottom = 14.0
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 2 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-bbcode_text = "temp"
+text = "temp"
 text = "temp"
 fit_content_height = true
 
 [node name="TitleContainer" type="CenterContainer" parent="SceneContainer/Parchment/ParchmentContainer"]
-margin_top = 18.0
-margin_right = 187.0
-margin_bottom = 33.0
+offset_top = 18.0
+offset_right = 187.0
+offset_bottom = 33.0
 
 [node name="Title" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/TitleContainer"]
-margin_left = 8.0
-margin_right = 179.0
-margin_bottom = 15.0
+offset_left = 8.0
+offset_right = 179.0
+offset_bottom = 15.0
 texture = ExtResource( 3 )
 
 [node name="AspectRatioContainer2" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer"]
-margin_top = 37.0
-margin_right = 187.0
-margin_bottom = 37.0
+offset_top = 37.0
+offset_right = 187.0
+offset_bottom = 37.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SceneContainer/Parchment/ParchmentContainer"]
-margin_top = 41.0
-margin_right = 187.0
-margin_bottom = 170.0
+offset_top = 41.0
+offset_right = 187.0
+offset_bottom = 170.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer"]
-margin_right = 175.0
-margin_bottom = 344.0
+offset_right = 175.0
+offset_bottom = 344.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TorchUpgrade Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer"]
-margin_right = 175.0
-margin_bottom = 32.0
+offset_right = 175.0
+offset_bottom = 32.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TorchUpgrade Container"]
-margin_bottom = 32.0
+offset_bottom = 32.0
 
 [node name="Torch Upgrade" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TorchUpgrade Container"]
-margin_left = 4.0
-margin_right = 36.0
-margin_bottom = 32.0
+offset_left = 4.0
+offset_right = 36.0
+offset_bottom = 32.0
 texture = ExtResource( 8 )
 
 [node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TorchUpgrade Container"]
-margin_left = 40.0
-margin_right = 139.0
-margin_bottom = 32.0
+offset_left = 40.0
+offset_right = 139.0
+offset_bottom = 32.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Torch : $30"
 text = "
 Torch : $30"
 
 [node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TorchUpgrade Container"]
-margin_left = 143.0
-margin_right = 175.0
-margin_bottom = 32.0
+offset_left = 143.0
+offset_right = 175.0
+offset_bottom = 32.0
 texture_normal = ExtResource( 5 )
 
 [node name="Chalk Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer"]
-margin_top = 36.0
-margin_right = 175.0
-margin_bottom = 68.0
+offset_top = 36.0
+offset_right = 175.0
+offset_bottom = 68.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Chalk Container"]
-margin_bottom = 32.0
+offset_bottom = 32.0
 
 [node name="Chalk" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Chalk Container"]
-margin_left = 4.0
-margin_right = 36.0
-margin_bottom = 32.0
+offset_left = 4.0
+offset_right = 36.0
+offset_bottom = 32.0
 texture = ExtResource( 9 )
 
 [node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Chalk Container"]
-margin_left = 40.0
-margin_right = 139.0
-margin_bottom = 32.0
+offset_left = 40.0
+offset_right = 139.0
+offset_bottom = 32.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Chalk: $50"
 text = "
 Chalk: $50"
 
 [node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Chalk Container"]
-margin_left = 143.0
-margin_right = 175.0
-margin_bottom = 32.0
+offset_left = 143.0
+offset_right = 175.0
+offset_bottom = 32.0
 texture_normal = ExtResource( 5 )
 
 [node name="SkeletonKey Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer"]
-margin_top = 72.0
-margin_right = 175.0
-margin_bottom = 104.0
+offset_top = 72.0
+offset_right = 175.0
+offset_bottom = 104.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SkeletonKey Container"]
-margin_bottom = 32.0
+offset_bottom = 32.0
 
 [node name="SkeletonKey" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SkeletonKey Container"]
-margin_left = 4.0
-margin_right = 36.0
-margin_bottom = 32.0
+offset_left = 4.0
+offset_right = 36.0
+offset_bottom = 32.0
 texture = ExtResource( 10 )
 
 [node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SkeletonKey Container"]
-margin_left = 40.0
-margin_right = 139.0
-margin_bottom = 32.0
+offset_left = 40.0
+offset_right = 139.0
+offset_bottom = 32.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
-Skeleton Key: $50"
 text = "
-Skeleton Key: $50"
+Skeleton3D Key: $50"
+text = "
+Skeleton3D Key: $50"
 
 [node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SkeletonKey Container"]
-margin_left = 143.0
-margin_right = 175.0
-margin_bottom = 32.0
+offset_left = 143.0
+offset_right = 175.0
+offset_bottom = 32.0
 texture_normal = ExtResource( 5 )
 
 [node name="SpeedUpgrade Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer"]
-margin_top = 108.0
-margin_right = 175.0
-margin_bottom = 148.0
+offset_top = 108.0
+offset_right = 175.0
+offset_bottom = 148.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SpeedUpgrade Container"]
-margin_bottom = 40.0
+offset_bottom = 40.0
 
 [node name="SpeedPotion" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SpeedUpgrade Container"]
-margin_left = 4.0
-margin_right = 36.0
-margin_bottom = 40.0
+offset_left = 4.0
+offset_right = 36.0
+offset_bottom = 40.0
 texture = ExtResource( 11 )
 
 [node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SpeedUpgrade Container"]
-margin_left = 40.0
-margin_right = 139.0
-margin_bottom = 40.0
+offset_left = 40.0
+offset_right = 139.0
+offset_bottom = 40.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Speed Pot: $75"
 text = "
 Speed Pot: $75"
 
 [node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SpeedUpgrade Container"]
-margin_left = 143.0
-margin_right = 175.0
-margin_bottom = 40.0
+offset_left = 143.0
+offset_right = 175.0
+offset_bottom = 40.0
 texture_normal = ExtResource( 5 )
 
 [node name="ScavengeTool Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer"]
-margin_top = 152.0
-margin_right = 175.0
-margin_bottom = 184.0
+offset_top = 152.0
+offset_right = 175.0
+offset_bottom = 184.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ScavengeTool Container"]
-margin_bottom = 32.0
+offset_bottom = 32.0
 
 [node name="ScavengeTool" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ScavengeTool Container"]
-margin_left = 4.0
-margin_right = 36.0
-margin_bottom = 32.0
+offset_left = 4.0
+offset_right = 36.0
+offset_bottom = 32.0
 texture = ExtResource( 14 )
 
 [node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ScavengeTool Container"]
-margin_left = 40.0
-margin_right = 139.0
-margin_bottom = 32.0
+offset_left = 40.0
+offset_right = 139.0
+offset_bottom = 32.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Mag. Glass: $75
 "
 text = "
@@ -275,145 +275,145 @@ Mag. Glass: $75
 "
 
 [node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ScavengeTool Container"]
-margin_left = 143.0
-margin_right = 175.0
-margin_bottom = 32.0
+offset_left = 143.0
+offset_right = 175.0
+offset_bottom = 32.0
 texture_normal = ExtResource( 5 )
 
 [node name="Compass Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer"]
-margin_top = 188.0
-margin_right = 175.0
-margin_bottom = 220.0
+offset_top = 188.0
+offset_right = 175.0
+offset_bottom = 220.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Compass Container"]
-margin_bottom = 32.0
+offset_bottom = 32.0
 
 [node name="Compass" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Compass Container"]
-margin_left = 4.0
-margin_right = 36.0
-margin_bottom = 32.0
+offset_left = 4.0
+offset_right = 36.0
+offset_bottom = 32.0
 texture = ExtResource( 6 )
 
 [node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Compass Container"]
-margin_left = 40.0
-margin_right = 139.0
-margin_bottom = 32.0
+offset_left = 40.0
+offset_right = 139.0
+offset_bottom = 32.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Compass: $100"
 text = "
 Compass: $100"
 
 [node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Compass Container"]
-margin_left = 143.0
-margin_right = 175.0
-margin_bottom = 32.0
+offset_left = 143.0
+offset_right = 175.0
+offset_bottom = 32.0
 texture_normal = ExtResource( 5 )
 
 [node name="TrapDetector Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer"]
-margin_top = 224.0
-margin_right = 175.0
-margin_bottom = 264.0
+offset_top = 224.0
+offset_right = 175.0
+offset_bottom = 264.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDetector Container"]
-margin_bottom = 40.0
+offset_bottom = 40.0
 
 [node name="TrapDetector" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDetector Container"]
-margin_left = 4.0
-margin_right = 36.0
-margin_bottom = 40.0
+offset_left = 4.0
+offset_right = 36.0
+offset_bottom = 40.0
 texture = ExtResource( 12 )
 
 [node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDetector Container"]
-margin_left = 40.0
-margin_right = 139.0
-margin_bottom = 40.0
+offset_left = 40.0
+offset_right = 139.0
+offset_bottom = 40.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Trap Detector: $100"
 text = "
 Trap Detector: $100"
 
 [node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDetector Container"]
-margin_left = 143.0
-margin_right = 175.0
-margin_bottom = 40.0
+offset_left = 143.0
+offset_right = 175.0
+offset_bottom = 40.0
 texture_normal = ExtResource( 5 )
 
 [node name="TrapDisarmer Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer"]
-margin_top = 268.0
-margin_right = 175.0
-margin_bottom = 308.0
+offset_top = 268.0
+offset_right = 175.0
+offset_bottom = 308.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDisarmer Container"]
-margin_bottom = 40.0
+offset_bottom = 40.0
 
 [node name="TrapDisarmer" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDisarmer Container"]
-margin_left = 4.0
-margin_right = 36.0
-margin_bottom = 40.0
+offset_left = 4.0
+offset_right = 36.0
+offset_bottom = 40.0
 texture = ExtResource( 13 )
 
 [node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDisarmer Container"]
-margin_left = 40.0
-margin_right = 139.0
-margin_bottom = 40.0
+offset_left = 40.0
+offset_right = 139.0
+offset_bottom = 40.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Disarm Kit: $100"
 text = "
 Disarm Kit: $100"
 
 [node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDisarmer Container"]
-margin_left = 143.0
-margin_right = 175.0
-margin_bottom = 40.0
+offset_left = 143.0
+offset_right = 175.0
+offset_bottom = 40.0
 texture_normal = ExtResource( 5 )
 
 [node name="ImproveDungeon Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer"]
-margin_top = 312.0
-margin_right = 175.0
-margin_bottom = 344.0
+offset_top = 312.0
+offset_right = 175.0
+offset_bottom = 344.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ImproveDungeon Container"]
-margin_bottom = 32.0
+offset_bottom = 32.0
 
 [node name="ImproveDungeon" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ImproveDungeon Container"]
-margin_left = 4.0
-margin_right = 36.0
-margin_bottom = 32.0
+offset_left = 4.0
+offset_right = 36.0
+offset_bottom = 32.0
 texture = ExtResource( 15 )
 
 [node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ImproveDungeon Container"]
-margin_left = 40.0
-margin_right = 139.0
-margin_bottom = 32.0
+offset_left = 40.0
+offset_right = 139.0
+offset_bottom = 32.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Better Loot: $200
 "
 text = "
@@ -421,65 +421,65 @@ Better Loot: $200
 "
 
 [node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ImproveDungeon Container"]
-margin_left = 143.0
-margin_right = 175.0
-margin_bottom = 32.0
+offset_left = 143.0
+offset_right = 175.0
+offset_bottom = 32.0
 texture_normal = ExtResource( 5 )
 
 [node name="AspectRatioContainer3" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer"]
-margin_top = 174.0
-margin_right = 187.0
-margin_bottom = 174.0
+offset_top = 174.0
+offset_right = 187.0
+offset_bottom = 174.0
 
 [node name="BackArrowContainer" type="HBoxContainer" parent="SceneContainer/Parchment"]
-margin_left = 16.0
-margin_top = 21.0
-margin_right = 41.0
-margin_bottom = 46.0
+offset_left = 16.0
+offset_top = 21.0
+offset_right = 41.0
+offset_bottom = 46.0
 
 [node name="BackArrow" type="TextureButton" parent="SceneContainer/Parchment/BackArrowContainer"]
-margin_right = 25.0
-margin_bottom = 25.0
+offset_right = 25.0
+offset_bottom = 25.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 19 )
 
 [node name="InfoContainer" type="CenterContainer" parent="SceneContainer"]
-margin_left = 144.0
-margin_top = 112.0
-margin_right = 144.0
-margin_bottom = 112.0
+offset_left = 144.0
+offset_top = 112.0
+offset_right = 144.0
+offset_bottom = 112.0
 
 [node name="CompassInfo" type="TextureRect" parent="SceneContainer/InfoContainer"]
 visible = false
-margin_left = -144.0
-margin_top = -50.0
-margin_right = 144.0
-margin_bottom = 50.0
+offset_left = -144.0
+offset_top = -50.0
+offset_right = 144.0
+offset_bottom = 50.0
 texture = ExtResource( 16 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/CompassInfo"]
-margin_left = 45.0
-margin_right = 244.0
-margin_bottom = 99.0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/CompassInfo/HBoxContainer"]
-margin_bottom = 99.0
+offset_bottom = 99.0
 
 [node name="Compass Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/CompassInfo/HBoxContainer"]
-margin_left = 4.0
-margin_right = 163.0
-margin_bottom = 99.0
+offset_left = 4.0
+offset_right = 163.0
+offset_bottom = 99.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Compass: $100
 
 The compass is a tool that will direct you towards the entrance of the dungeon."
@@ -489,55 +489,55 @@ Compass: $100
 The compass is a tool that will direct you towards the entrance of the dungeon."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/CompassInfo/HBoxContainer"]
-margin_left = 167.0
-margin_right = 199.0
-margin_bottom = 99.0
+offset_left = 167.0
+offset_right = 199.0
+offset_bottom = 99.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/CompassInfo/HBoxContainer/VBoxContainer"]
-margin_right = 32.0
+offset_right = 32.0
 
 [node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/CompassInfo/HBoxContainer/VBoxContainer"]
-margin_top = 4.0
-margin_right = 32.0
-margin_bottom = 36.0
+offset_top = 4.0
+offset_right = 32.0
+offset_bottom = 36.0
 texture_normal = ExtResource( 18 )
 
 [node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/CompassInfo/HBoxContainer/VBoxContainer"]
-margin_top = 40.0
-margin_right = 32.0
-margin_bottom = 72.0
+offset_top = 40.0
+offset_right = 32.0
+offset_bottom = 72.0
 texture_normal = ExtResource( 17 )
 
 [node name="ChalkInfo" type="TextureRect" parent="SceneContainer/InfoContainer"]
 visible = false
-margin_left = -144.0
-margin_top = -50.0
-margin_right = 144.0
-margin_bottom = 50.0
+offset_left = -144.0
+offset_top = -50.0
+offset_right = 144.0
+offset_bottom = 50.0
 texture = ExtResource( 16 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/ChalkInfo"]
-margin_left = 45.0
-margin_right = 244.0
-margin_bottom = 99.0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/ChalkInfo/HBoxContainer"]
-margin_bottom = 99.0
+offset_bottom = 99.0
 
 [node name="Chalk Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/ChalkInfo/HBoxContainer"]
-margin_left = 4.0
-margin_right = 163.0
-margin_bottom = 99.0
+offset_left = 4.0
+offset_right = 163.0
+offset_bottom = 99.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Chalk: $50
 
 The chalk is a tool that will allow you to mark where you have been in the dungeon. Beware, the chalk may snap."
@@ -547,55 +547,55 @@ Chalk: $50
 The chalk is a tool that will allow you to mark where you have been in the dungeon. Beware, the chalk may snap."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/ChalkInfo/HBoxContainer"]
-margin_left = 167.0
-margin_right = 199.0
-margin_bottom = 99.0
+offset_left = 167.0
+offset_right = 199.0
+offset_bottom = 99.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/ChalkInfo/HBoxContainer/VBoxContainer"]
-margin_right = 32.0
+offset_right = 32.0
 
 [node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/ChalkInfo/HBoxContainer/VBoxContainer"]
-margin_top = 4.0
-margin_right = 32.0
-margin_bottom = 36.0
+offset_top = 4.0
+offset_right = 32.0
+offset_bottom = 36.0
 texture_normal = ExtResource( 18 )
 
 [node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/ChalkInfo/HBoxContainer/VBoxContainer"]
-margin_top = 40.0
-margin_right = 32.0
-margin_bottom = 72.0
+offset_top = 40.0
+offset_right = 32.0
+offset_bottom = 72.0
 texture_normal = ExtResource( 17 )
 
 [node name="TorchInfo" type="TextureRect" parent="SceneContainer/InfoContainer"]
 visible = false
-margin_left = -144.0
-margin_top = -50.0
-margin_right = 144.0
-margin_bottom = 50.0
+offset_left = -144.0
+offset_top = -50.0
+offset_right = 144.0
+offset_bottom = 50.0
 texture = ExtResource( 16 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/TorchInfo"]
-margin_left = 45.0
-margin_right = 244.0
-margin_bottom = 99.0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/TorchInfo/HBoxContainer"]
-margin_bottom = 99.0
+offset_bottom = 99.0
 
 [node name="Torch Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/TorchInfo/HBoxContainer"]
-margin_left = 4.0
-margin_right = 163.0
-margin_bottom = 99.0
+offset_left = 4.0
+offset_right = 163.0
+offset_bottom = 99.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Torch: $30
 
 This is an upgrade to your torch and will allow it to burn for longer whilst in the dungeon."
@@ -605,113 +605,113 @@ Torch: $30
 This is an upgrade to your torch and will allow it to burn for longer whilst in the dungeon."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/TorchInfo/HBoxContainer"]
-margin_left = 167.0
-margin_right = 199.0
-margin_bottom = 99.0
+offset_left = 167.0
+offset_right = 199.0
+offset_bottom = 99.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/TorchInfo/HBoxContainer/VBoxContainer"]
-margin_right = 32.0
+offset_right = 32.0
 
 [node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/TorchInfo/HBoxContainer/VBoxContainer"]
-margin_top = 4.0
-margin_right = 32.0
-margin_bottom = 36.0
+offset_top = 4.0
+offset_right = 32.0
+offset_bottom = 36.0
 texture_normal = ExtResource( 18 )
 
 [node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/TorchInfo/HBoxContainer/VBoxContainer"]
-margin_top = 40.0
-margin_right = 32.0
-margin_bottom = 72.0
+offset_top = 40.0
+offset_right = 32.0
+offset_bottom = 72.0
 texture_normal = ExtResource( 17 )
 
 [node name="KeyInfo" type="TextureRect" parent="SceneContainer/InfoContainer"]
 visible = false
-margin_left = -144.0
-margin_top = -50.0
-margin_right = 144.0
-margin_bottom = 50.0
+offset_left = -144.0
+offset_top = -50.0
+offset_right = 144.0
+offset_bottom = 50.0
 texture = ExtResource( 16 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/KeyInfo"]
-margin_left = 45.0
-margin_right = 244.0
-margin_bottom = 99.0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/KeyInfo/HBoxContainer"]
-margin_bottom = 99.0
+offset_bottom = 99.0
 
 [node name="Key Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/KeyInfo/HBoxContainer"]
-margin_left = 4.0
-margin_right = 163.0
-margin_bottom = 99.0
+offset_left = 4.0
+offset_right = 163.0
+offset_bottom = 99.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
-Skeleton Key: $50
+text = "
+Skeleton3D Key: $50
 
 This consumable key will allow you to open a chest within the dungeon for the chance to earn more gold."
 text = "
-Skeleton Key: $50
+Skeleton3D Key: $50
 
 This consumable key will allow you to open a chest within the dungeon for the chance to earn more gold."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/KeyInfo/HBoxContainer"]
-margin_left = 167.0
-margin_right = 199.0
-margin_bottom = 99.0
+offset_left = 167.0
+offset_right = 199.0
+offset_bottom = 99.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/KeyInfo/HBoxContainer/VBoxContainer"]
-margin_right = 32.0
+offset_right = 32.0
 
 [node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/KeyInfo/HBoxContainer/VBoxContainer"]
-margin_top = 4.0
-margin_right = 32.0
-margin_bottom = 36.0
+offset_top = 4.0
+offset_right = 32.0
+offset_bottom = 36.0
 texture_normal = ExtResource( 18 )
 
 [node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/KeyInfo/HBoxContainer/VBoxContainer"]
-margin_top = 40.0
-margin_right = 32.0
-margin_bottom = 72.0
+offset_top = 40.0
+offset_right = 32.0
+offset_bottom = 72.0
 texture_normal = ExtResource( 17 )
 
 [node name="SpeedInfo" type="TextureRect" parent="SceneContainer/InfoContainer"]
 visible = false
-margin_left = -144.0
-margin_top = -50.0
-margin_right = 144.0
-margin_bottom = 50.0
+offset_left = -144.0
+offset_top = -50.0
+offset_right = 144.0
+offset_bottom = 50.0
 texture = ExtResource( 16 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/SpeedInfo"]
-margin_left = 45.0
-margin_right = 244.0
-margin_bottom = 99.0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/SpeedInfo/HBoxContainer"]
-margin_bottom = 99.0
+offset_bottom = 99.0
 
 [node name="Speed Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/SpeedInfo/HBoxContainer"]
-margin_left = 4.0
-margin_right = 163.0
-margin_bottom = 99.0
+offset_left = 4.0
+offset_right = 163.0
+offset_bottom = 99.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Speed Potion: $75
 
 This consumable potion will give you increased movement speed for one dungeon dive."
@@ -721,55 +721,55 @@ Speed Potion: $75
 This consumable potion will give you increased movement speed for one dungeon dive."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/SpeedInfo/HBoxContainer"]
-margin_left = 167.0
-margin_right = 199.0
-margin_bottom = 99.0
+offset_left = 167.0
+offset_right = 199.0
+offset_bottom = 99.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/SpeedInfo/HBoxContainer/VBoxContainer"]
-margin_right = 32.0
+offset_right = 32.0
 
 [node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/SpeedInfo/HBoxContainer/VBoxContainer"]
-margin_top = 4.0
-margin_right = 32.0
-margin_bottom = 36.0
+offset_top = 4.0
+offset_right = 32.0
+offset_bottom = 36.0
 texture_normal = ExtResource( 18 )
 
 [node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/SpeedInfo/HBoxContainer/VBoxContainer"]
-margin_top = 40.0
-margin_right = 32.0
-margin_bottom = 72.0
+offset_top = 40.0
+offset_right = 32.0
+offset_bottom = 72.0
 texture_normal = ExtResource( 17 )
 
 [node name="TrapDetectorInfo" type="TextureRect" parent="SceneContainer/InfoContainer"]
 visible = false
-margin_left = -144.0
-margin_top = -50.0
-margin_right = 144.0
-margin_bottom = 50.0
+offset_left = -144.0
+offset_top = -50.0
+offset_right = 144.0
+offset_bottom = 50.0
 texture = ExtResource( 16 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/TrapDetectorInfo"]
-margin_left = 45.0
-margin_right = 244.0
-margin_bottom = 99.0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/TrapDetectorInfo/HBoxContainer"]
-margin_bottom = 99.0
+offset_bottom = 99.0
 
 [node name="Detector Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/TrapDetectorInfo/HBoxContainer"]
-margin_left = 4.0
-margin_right = 163.0
-margin_bottom = 99.0
+offset_left = 4.0
+offset_right = 163.0
+offset_bottom = 99.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Trap Detector: $100
 
 This item will will highlight any traps in a room, allowing you to avoid them and survive another dive."
@@ -779,55 +779,55 @@ Trap Detector: $100
 This item will will highlight any traps in a room, allowing you to avoid them and survive another dive."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/TrapDetectorInfo/HBoxContainer"]
-margin_left = 167.0
-margin_right = 199.0
-margin_bottom = 99.0
+offset_left = 167.0
+offset_right = 199.0
+offset_bottom = 99.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/TrapDetectorInfo/HBoxContainer/VBoxContainer"]
-margin_right = 32.0
+offset_right = 32.0
 
 [node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/TrapDetectorInfo/HBoxContainer/VBoxContainer"]
-margin_top = 4.0
-margin_right = 32.0
-margin_bottom = 36.0
+offset_top = 4.0
+offset_right = 32.0
+offset_bottom = 36.0
 texture_normal = ExtResource( 18 )
 
 [node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/TrapDetectorInfo/HBoxContainer/VBoxContainer"]
-margin_top = 40.0
-margin_right = 32.0
-margin_bottom = 72.0
+offset_top = 40.0
+offset_right = 32.0
+offset_bottom = 72.0
 texture_normal = ExtResource( 17 )
 
 [node name="TrapDisarmerInfo" type="TextureRect" parent="SceneContainer/InfoContainer"]
 visible = false
-margin_left = -144.0
-margin_top = -50.0
-margin_right = 144.0
-margin_bottom = 50.0
+offset_left = -144.0
+offset_top = -50.0
+offset_right = 144.0
+offset_bottom = 50.0
 texture = ExtResource( 16 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/TrapDisarmerInfo"]
-margin_left = 45.0
-margin_right = 244.0
-margin_bottom = 99.0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/TrapDisarmerInfo/HBoxContainer"]
-margin_bottom = 99.0
+offset_bottom = 99.0
 
 [node name="Disarmer Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/TrapDisarmerInfo/HBoxContainer"]
-margin_left = 4.0
-margin_right = 163.0
-margin_bottom = 99.0
+offset_left = 4.0
+offset_right = 163.0
+offset_bottom = 99.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Disarm Kit: $100
 
 This item will will allow you to disarm any traps you can find in a room so you can pass by them safely."
@@ -837,55 +837,55 @@ Disarm Kit: $100
 This item will will allow you to disarm any traps you can find in a room so you can pass by them safely."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/TrapDisarmerInfo/HBoxContainer"]
-margin_left = 167.0
-margin_right = 199.0
-margin_bottom = 99.0
+offset_left = 167.0
+offset_right = 199.0
+offset_bottom = 99.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/TrapDisarmerInfo/HBoxContainer/VBoxContainer"]
-margin_right = 32.0
+offset_right = 32.0
 
 [node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/TrapDisarmerInfo/HBoxContainer/VBoxContainer"]
-margin_top = 4.0
-margin_right = 32.0
-margin_bottom = 36.0
+offset_top = 4.0
+offset_right = 32.0
+offset_bottom = 36.0
 texture_normal = ExtResource( 18 )
 
 [node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/TrapDisarmerInfo/HBoxContainer/VBoxContainer"]
-margin_top = 40.0
-margin_right = 32.0
-margin_bottom = 72.0
+offset_top = 40.0
+offset_right = 32.0
+offset_bottom = 72.0
 texture_normal = ExtResource( 17 )
 
 [node name="ScavengeInfo" type="TextureRect" parent="SceneContainer/InfoContainer"]
 visible = false
-margin_left = -144.0
-margin_top = -50.0
-margin_right = 144.0
-margin_bottom = 50.0
+offset_left = -144.0
+offset_top = -50.0
+offset_right = 144.0
+offset_bottom = 50.0
 texture = ExtResource( 16 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/ScavengeInfo"]
-margin_left = 45.0
-margin_right = 244.0
-margin_bottom = 99.0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/ScavengeInfo/HBoxContainer"]
-margin_bottom = 99.0
+offset_bottom = 99.0
 
 [node name="Scavenge Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/ScavengeInfo/HBoxContainer"]
-margin_left = 4.0
-margin_right = 163.0
-margin_bottom = 99.0
+offset_left = 4.0
+offset_right = 163.0
+offset_bottom = 99.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Magnifying Glass: $75
 
 This tool will allow you to investigate objects on the dungeon floor and possibly get some more gold."
@@ -895,55 +895,55 @@ Magnifying Glass: $75
 This tool will allow you to investigate objects on the dungeon floor and possibly get some more gold."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/ScavengeInfo/HBoxContainer"]
-margin_left = 167.0
-margin_right = 199.0
-margin_bottom = 99.0
+offset_left = 167.0
+offset_right = 199.0
+offset_bottom = 99.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/ScavengeInfo/HBoxContainer/VBoxContainer"]
-margin_right = 32.0
+offset_right = 32.0
 
 [node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/ScavengeInfo/HBoxContainer/VBoxContainer"]
-margin_top = 4.0
-margin_right = 32.0
-margin_bottom = 36.0
+offset_top = 4.0
+offset_right = 32.0
+offset_bottom = 36.0
 texture_normal = ExtResource( 18 )
 
 [node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/ScavengeInfo/HBoxContainer/VBoxContainer"]
-margin_top = 40.0
-margin_right = 32.0
-margin_bottom = 72.0
+offset_top = 40.0
+offset_right = 32.0
+offset_bottom = 72.0
 texture_normal = ExtResource( 17 )
 
 [node name="ImproveDungeonInfo" type="TextureRect" parent="SceneContainer/InfoContainer"]
 visible = false
-margin_left = -144.0
-margin_top = -50.0
-margin_right = 144.0
-margin_bottom = 50.0
+offset_left = -144.0
+offset_top = -50.0
+offset_right = 144.0
+offset_bottom = 50.0
 texture = ExtResource( 16 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/ImproveDungeonInfo"]
-margin_left = 45.0
-margin_right = 244.0
-margin_bottom = 99.0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/ImproveDungeonInfo/HBoxContainer"]
-margin_bottom = 99.0
+offset_bottom = 99.0
 
 [node name="Key Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/ImproveDungeonInfo/HBoxContainer"]
-margin_left = 4.0
-margin_right = 163.0
-margin_bottom = 99.0
+offset_left = 4.0
+offset_right = 163.0
+offset_bottom = 99.0
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 10, 10 )
+custom_minimum_size = Vector2( 10, 10 )
 size_flags_horizontal = 3
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "
+text = "
 Better Loot: $200
 
 This upgrade will improve the amount of loot you can obtain in a single dungeon dive. However, it may make the dungeon more dangerous."
@@ -953,23 +953,23 @@ Better Loot: $200
 This upgrade will improve the amount of loot you can obtain in a single dungeon dive. However, it may make the dungeon more dangerous."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/ImproveDungeonInfo/HBoxContainer"]
-margin_left = 167.0
-margin_right = 199.0
-margin_bottom = 99.0
+offset_left = 167.0
+offset_right = 199.0
+offset_bottom = 99.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/ImproveDungeonInfo/HBoxContainer/VBoxContainer"]
-margin_right = 32.0
+offset_right = 32.0
 
 [node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/ImproveDungeonInfo/HBoxContainer/VBoxContainer"]
-margin_top = 4.0
-margin_right = 32.0
-margin_bottom = 36.0
+offset_top = 4.0
+offset_right = 32.0
+offset_bottom = 36.0
 texture_normal = ExtResource( 18 )
 
 [node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/ImproveDungeonInfo/HBoxContainer/VBoxContainer"]
-margin_top = 40.0
-margin_right = 32.0
-margin_bottom = 72.0
+offset_top = 40.0
+offset_right = 32.0
+offset_bottom = 72.0
 texture_normal = ExtResource( 17 )
 
 [connection signal="pressed" from="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TorchUpgrade Container/InfoButton" to="." method="TorchInfoButtonPressed"]
