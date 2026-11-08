@@ -67,16 +67,16 @@ public partial class Items : Node2D
 			switch (d)
 			{
 				case Room.Dir.UP:
-					if ((x == ((xSize - 2) / 2) || x == ((xSize - 2) / 2) - 1) && y == 0) return false;
+					if ((x == (xSize / 2) - 2 || x == (xSize / 2) - 1) && y == 0) return false;
 					break;
 				case Room.Dir.DOWN:
-					if ((x == ((xSize - 2) / 2) || x == ((xSize - 2) / 2) - 1) && y == ySize - 3) return false;
+					if ((x == (xSize / 2) - 2 || x == (xSize / 2) - 1) && y == ySize - 3) return false;
 					break;
 				case Room.Dir.LEFT:
-					if (x == 0 && (y == ((ySize - 2) / 2) || y == ((ySize - 2) / 2 - 1))) return false;
+					if (x == 0 && (y == (ySize / 2) - 2 || y == (ySize / 2) - 1)) return false;
 					break;
 				case Room.Dir.RIGHT:
-					if (x == xSize - 3 && (y == ((ySize - 2) / 2) || y == ((ySize - 2) / 2 - 1))) return false;
+					if (x == xSize - 3 && (y == (ySize / 2) - 2 || y == (ySize / 2) - 1)) return false;
 					break;
 			}
 		}
@@ -90,24 +90,27 @@ public partial class Items : Node2D
 		int numberOfItems = roomSize / 16;
 		int x, y;
 		Sprites newSpr;
-		bool isValidDirection, isValidPlace;
+		bool isCobweb, isValidDirection, isValidPlace;
 		for (int i = 0; i < numberOfItems; i++)
 		{
-			if (rn.Next(1,101) == 19) newSpr = Items.Sprites.KEY;
+			if (rn.Next(1,101) == 19) newSpr = Sprites.KEY;
 			else newSpr = (Sprites)rn.Next(1,9);
 
-			if (newSpr == Sprites.BIG_COBWEB || newSpr == Sprites.SMALL_COBWEB) isValidDirection = false;
-			else isValidDirection = true;
-
-			isValidPlace = false;
+			if (newSpr == Sprites.BIG_COBWEB || newSpr == Sprites.SMALL_COBWEB) isCobweb = true;
+			else isCobweb = false;
 
 			do
 			{
+				if (isCobweb) isValidDirection = false;
+				else isValidDirection = true;
+
 				x = rn.Next(0, xSize - 2);
 				y = rn.Next(0, ySize - 2);
-				if (!isValidDirection && (x == 0 || x == xSize - 3)) isValidDirection = true;
-				if (ValidPlacement(xSize, ySize, x, y, connectedRooms)) isValidPlace = true;
-			} while (spriteMap[x, y] != Sprites.NONE || !isValidDirection | !isValidPlace);
+
+				if (isCobweb && (x == 0 || x == xSize - 3)) isValidDirection = true;
+				isValidPlace = ValidPlacement(xSize, ySize, x, y, connectedRooms);
+			
+			} while (spriteMap[x, y] != Sprites.NONE || !isValidDirection || !isValidPlace);
 
 			spriteMap[x,y] = newSpr;
 			if ((newSpr == Sprites.BIG_COBWEB && x == xSize - 3) || (newSpr == Sprites.SMALL_COBWEB && x == 0))

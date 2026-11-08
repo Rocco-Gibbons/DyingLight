@@ -1,15 +1,16 @@
 using Godot;
 using System;
 using System.Collections.Generic;
-using System.Data;
+using System.Diagnostics;
 using System.Linq;
-using System.Xml;
-using System.Xml.Linq;
+using System.Runtime.InteropServices;
 
 public partial class Main : Node2D
 {
 	[Export]
     public PackedScene RoomScene { get; set; }
+
+	Stopwatch gameTimer;
 
 	Random rn = new Random();
 
@@ -28,7 +29,7 @@ public partial class Main : Node2D
 	//1: index of room below (or -1 if none)
 	//2: index of room to the left (or -1 if none)
 	//3: index of room to the right (or -1 if none)
-	List<List<int>> roomRepresentation = [[-1]];
+	List<List<int>> roomRepresentation = [[-1, -1, -1], [-1, 0, -1], [-1, -100, -1]];
 	List<(int, int, Vector2I, Vector2I)> roomChanges = []; //index to change to, area1, area2
 
 	private void ExpandRepresentation(Room.Dir dir)
@@ -62,6 +63,80 @@ public partial class Main : Node2D
 					newBottomLayer.Add(-1);
 				}
 				roomRepresentation.Add(newBottomLayer);
+				break;
+		}
+	}
+
+	private List<Room.Dir> CanPlaceRoom(int roomIndex)
+	{
+		List<Room.Dir> toReturn = [];
+		for (int a = 0; a < roomRepresentation.Count; a++)
+		{
+			for (int b = 0; b < roomRepresentation[0].Count; b++)
+			{
+				if (roomRepresentation[a][b] == roomIndex)
+				{
+					if (a == roomRepresentation.Count - 1)
+					{
+						ExpandRepresentation(Room.Dir.DOWN);
+						return CanPlaceRoom(roomIndex);
+					}
+					else if (b == roomRepresentation[0].Count - 1)
+					{
+						ExpandRepresentation(Room.Dir.RIGHT);
+						return CanPlaceRoom(roomIndex);
+					}
+					else if (a == 0)
+					{
+						ExpandRepresentation(Room.Dir.UP);
+						return CanPlaceRoom(roomIndex);
+					}
+					else if (b == 0)
+					{
+						ExpandRepresentation(Room.Dir.LEFT);
+						return CanPlaceRoom(roomIndex);
+					}
+					else
+					{
+						if (roomRepresentation[a + 1][b] == -1) toReturn.Add(Room.Dir.DOWN);
+						if (roomRepresentation[a][b + 1] == -1) toReturn.Add(Room.Dir.RIGHT);
+						if (roomRepresentation[a - 1][b] == -1) toReturn.Add(Room.Dir.UP);
+						if (roomRepresentation[a][b - 1] == -1) toReturn.Add(Room.Dir.LEFT);
+					}
+				}
+			}
+		}
+		return toReturn;
+	}
+
+	private void AddRepresentation(int fromIndex, int newIndex, Room.Dir dir)
+	{
+		int x = 0, y = 0;
+		for (int i = 0; i < roomRepresentation.Count; i++)
+		{
+			for (int j = 0; j < roomRepresentation[0].Count; j++)
+			{
+				if (roomRepresentation[i][j] == fromIndex)
+				{
+					x = i;
+					y = j;
+				}
+			}
+		}
+
+		switch (dir)
+		{
+			case Room.Dir.UP:
+				roomRepresentation[x - 1][y] = newIndex;
+				break;
+			case Room.Dir.DOWN:
+				roomRepresentation[x + 1][y] = newIndex;
+				break;
+			case Room.Dir.LEFT:
+				roomRepresentation[x][y - 1] = newIndex;
+				break;
+			case Room.Dir.RIGHT:
+				roomRepresentation[x][y + 1] = newIndex;
 				break;
 		}
 	}
@@ -166,16 +241,19 @@ public partial class Main : Node2D
 		}
 		else
 		{
+			List<Room.Dir> possibleConnections = CanPlaceRoom(connectIndex);
 			Room.Dir newConnection;
 			do
 			{
 				newConnection = (Room.Dir)rn.Next(0,4);
-			} while(roomTree[connectIndex][(int)newConnection] != -1);
+			} while(!possibleConnections.Contains(newConnection));
 			newRoom.connectedRooms.Add(GetOppositeDir(newConnection));
 			newRoom.isStart = false;
 			roomList[connectIndex].connectedRooms.Add(newConnection);
 			roomTree.Add([-1, -1, -1, -1]);
 			ConnectRooms(roomList.Count - 1, connectIndex, GetOppositeDir(newConnection));
+
+			AddRepresentation(connectIndex, roomList.Count - 1, newConnection);
 		}
 	}
 
@@ -190,7 +268,6 @@ public partial class Main : Node2D
 	private void CreateDungeon(int rooms)
 	{
 		int roomIndex;
-		int[] roomLeaf;
 		//first make start room:
 		MakeRoom(-1); //-1 signals no connections as it is the first one
 		rooms--;
@@ -200,8 +277,7 @@ public partial class Main : Node2D
 			do
 			{
 				roomIndex = rn.Next(0,roomList.Count);
-				roomLeaf = roomTree[roomIndex];
-			} while (!roomLeaf.Contains(-1));
+			} while (CanPlaceRoom(roomIndex).Count == 0);
 			//create a new room the connects to that one
 			MakeRoom(roomIndex);			
 		}
@@ -215,7 +291,9 @@ public partial class Main : Node2D
 		startButton = GetNode<Button>("StartButton");
 		startButton.Hide();
 
-		CreateDungeon(100);
+		gameTimer = Stopwatch.StartNew();
+
+		CreateDungeon(20);
 
 		currentRoomIndex = 0;
 		roomList[0].PlayerEntered();
@@ -284,14 +362,8 @@ public partial class Main : Node2D
 
 	private void GameOver(bool succeeded)
 	{
-		if (succeeded)
-		{
-			GD.Print("Yay!");
-		}
-		else
-		{
-			GD.Print("BooHoo");
-		}
+		gameTimer.Stop();
+		GD.Print(gameTimer.Elapsed.TotalSeconds);
 	}
 
 	// Called when the node enters the scene tree for the first time.
