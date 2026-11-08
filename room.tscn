@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dxwgt01rxg0cs"]
+
+[ext_resource type="Script" uid="uid://fwxotijgm3n1" path="res://Room.cs" id="1_bisa2"]
+[ext_resource type="TileSet" uid="uid://d2cs6r0bkthdx" path="res://FloorsAndWalls.tres" id="2_4o3f6"]
+[ext_resource type="PackedScene" uid="uid://dcmxebh8xxc7j" path="res://items.tscn" id="2_v5vuv"]
+
+[node name="Room" type="Node2D" unique_id=2033990999]
+script = ExtResource("1_bisa2")
+ItemScene = ExtResource("2_v5vuv")
+
+[node name="RoomLayout" type="TileMapLayer" parent="." unique_id=1244443046]
+tile_set = ExtResource("2_4o3f6")

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cbpg0egfmawt2"]
+
+[ext_resource type="Texture2D" uid="uid://jwg7jk2yu6ip" path="res://assets/menu_background.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cvejfmiwgtay1" path="res://assets/parchment.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://5oh1vh6rl4pv" path="res://assets/title_screen_ui/text/shop.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://fv6dr5wd5p8g" path="res://assets/completed_run_ui/dive_again.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cayl5b7f1ii8w" path="res://assets/completed_run_ui/inventory.png" id="5"]
+[ext_resource type="Script" uid="uid://dfodsaw4ggcoh" path="res://CompletedRunMenu.cs" id="6"]
+
+[node name="CompletedRunMenu" type="MarginContainer" unique_id=2070245338]
+offset_right = 288.0
+offset_bottom = 224.0
+script = ExtResource("6")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2104461435]
+layout_mode = 2
+texture = ExtResource("1")
+
+[node name="SceneContainer" type="CenterContainer" parent="." unique_id=2031151068]
+layout_mode = 2
+
+[node name="Parchment" type="TextureRect" parent="SceneContainer" unique_id=769332211]
+layout_mode = 2
+texture = ExtResource("2")
+
+[node name="ParchmentContainer" type="VBoxContainer" parent="SceneContainer/Parchment" unique_id=341769882]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 21.0
+offset_right = 237.0
+offset_bottom = 195.0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer" unique_id=353754050]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DiveAgainContainer" type="CenterContainer" parent="SceneContainer/Parchment/ParchmentContainer" unique_id=580344825]
+layout_mode = 2
+
+[node name="DiveAgain" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/DiveAgainContainer" unique_id=572949110]
+layout_mode = 2
+texture_normal = ExtResource("4")
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer" unique_id=491654571]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InventoryContainer" type="CenterContainer" parent="SceneContainer/Parchment/ParchmentContainer" unique_id=1450486298]
+layout_mode = 2
+
+[node name="Inventory" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/InventoryContainer" unique_id=842731175]
+layout_mode = 2
+texture_normal = ExtResource("5")
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer" unique_id=302647423]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ShopContainer" type="CenterContainer" parent="SceneContainer/Parchment/ParchmentContainer" unique_id=76552550]
+layout_mode = 2
+
+[node name="Shop" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ShopContainer" unique_id=109337816]
+layout_mode = 2
+texture_normal = ExtResource("3")
+
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer" unique_id=2094725646]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="SceneContainer/Parchment/ParchmentContainer/DiveAgainContainer/DiveAgain" to="." method="DiveAgainButtonPressed"]
+[connection signal="pressed" from="SceneContainer/Parchment/ParchmentContainer/InventoryContainer/Inventory" to="." method="InventoryButtonPressed"]
+[connection signal="pressed" from="SceneContainer/Parchment/ParchmentContainer/ShopContainer/Shop" to="." method="ShopButtonPressed"]

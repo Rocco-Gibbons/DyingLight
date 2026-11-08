@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://jc7kyxxlp1ga"]
+
+[ext_resource type="Texture2D" uid="uid://5rjau2lr3vb0" path="res://assets/title_screen_ui/text/new_game_button.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://b6k4vqbbvemyw" path="res://assets/title_screen_ui/text/leaderboard_button.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://ddjjmipsdegjt" path="res://assets/title_screen_ui/text/quit_button.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://1fjsqt8c4j18" path="res://assets/title_screen_ui/text/title.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://coyudlpxh4v7r" path="res://assets/title_screen_ui/torch/torch_1.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dqfunguef8qef" path="res://assets/title_screen_ui/torch/torch_2.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://b0hk1ef3hgr28" path="res://assets/title_screen_ui/torch/torch_3.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://dd83wrtms6mt" path="res://assets/title_screen_ui/torch/torch_4.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://jwg7jk2yu6ip" path="res://assets/menu_background.png" id="10"]
+[ext_resource type="Script" uid="uid://qvrwqqpcnqj3" path="res://MainMenu.cs" id="11"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_u7cqb"]
+frames = 4
+frame_0/texture = ExtResource("6")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("7")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("8")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("9")
+frame_3/duration = 0.2
+
+[node name="MainMenu" type="MarginContainer" unique_id=946465926]
+offset_right = 288.0
+offset_bottom = 224.0
+script = ExtResource("11")
+
+[node name="Background" type="TextureRect" parent="." unique_id=849853775]
+layout_mode = 2
+texture = ExtResource("10")
+
+[node name="SceneContainer" type="HBoxContainer" parent="." unique_id=1671714931]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer" unique_id=1709022094]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LeftSplitContainer" type="CenterContainer" parent="SceneContainer" unique_id=434580327]
+layout_mode = 2
+
+[node name="TextContainer" type="HBoxContainer" parent="SceneContainer/LeftSplitContainer" unique_id=875339845]
+layout_mode = 2
+
+[node name="InnerTextContainer" type="VBoxContainer" parent="SceneContainer/LeftSplitContainer/TextContainer" unique_id=438811861]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="TextureRect" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer" unique_id=1784341931]
+layout_mode = 2
+texture = ExtResource("5")
+
+[node name="ButtonContainer" type="CenterContainer" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer" unique_id=2044431064]
+layout_mode = 2
+
+[node name="ButtonListContainer" type="VBoxContainer" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer" unique_id=1939826126]
+layout_mode = 2
+
+[node name="NewGameContainer" type="CenterContainer" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer" unique_id=746761718]
+layout_mode = 2
+
+[node name="NewGame" type="TextureButton" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer/NewGameContainer" unique_id=818249766]
+layout_mode = 2
+texture_normal = ExtResource("2")
+
+[node name="LeaderboardContainer" type="CenterContainer" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer" unique_id=505300378]
+layout_mode = 2
+
+[node name="Leaderboard" type="TextureButton" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer/LeaderboardContainer" unique_id=955761322]
+layout_mode = 2
+texture_normal = ExtResource("3")
+
+[node name="QuitContainer" type="CenterContainer" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer" unique_id=343819419]
+layout_mode = 2
+
+[node name="Quit" type="TextureButton" parent="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer/QuitContainer" unique_id=1215214067]
+layout_mode = 2
+texture_normal = ExtResource("4")
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="SceneContainer" unique_id=121083306]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightSplitContainer" type="HBoxContainer" parent="SceneContainer" unique_id=958540646]
+layout_mode = 2
+
+[node name="TorchContainer" type="CenterContainer" parent="SceneContainer/RightSplitContainer" unique_id=1465346078]
+layout_mode = 2
+
+[node name="Torch" type="TextureRect" parent="SceneContainer/RightSplitContainer/TorchContainer" unique_id=583277376]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_u7cqb")
+
+[connection signal="pressed" from="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer/NewGameContainer/NewGame" to="." method="NewGameButtonPressed"]
+[connection signal="pressed" from="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer/LeaderboardContainer/Leaderboard" to="." method="LeaderboardButtonPressed"]
+[connection signal="pressed" from="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer/QuitContainer/Quit" to="." method="QuitButtonPressed"]

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bgvlj8pp3406"]
+
+[ext_resource type="Script" uid="uid://1k7qvjrqr7xw" path="res://MainGame.cs" id="1_8qpgq"]
+[ext_resource type="PackedScene" uid="uid://jc7kyxxlp1ga" path="res://MainMenu.tscn" id="1_bqqt8"]
+[ext_resource type="PackedScene" uid="uid://co4dwn1mf2eg0" path="res://Leaderboard.tscn" id="2_8qpgq"]
+[ext_resource type="PackedScene" uid="uid://c7uj7smn2nc7u" path="res://Shop.tscn" id="3_pv6b4"]
+[ext_resource type="PackedScene" uid="uid://b8v1xvokyx47j" path="res://game.tscn" id="4_8dnxm"]
+[ext_resource type="PackedScene" uid="uid://cbpg0egfmawt2" path="res://CompletedRunMenu.tscn" id="5_8dnxm"]
+[ext_resource type="PackedScene" uid="uid://cidahqb6liqxa" path="res://Inventory.tscn" id="6_v3hs3"]
+
+[node name="MainGame" type="Node2D" unique_id=1298471041]
+script = ExtResource("1_8qpgq")
+GameScene = ExtResource("4_8dnxm")
+
+[node name="MainMenu" parent="." unique_id=946465926 instance=ExtResource("1_bqqt8")]
+
+[node name="Leaderboard" parent="." unique_id=1852855619 instance=ExtResource("2_8qpgq")]
+visible = false
+
+[node name="Shop" parent="." unique_id=183557418 instance=ExtResource("3_pv6b4")]
+visible = false
+
+[node name="CompletedRunMenu" parent="." unique_id=2070245338 instance=ExtResource("5_8dnxm")]
+visible = false
+
+[node name="Inventory" parent="." unique_id=314398771 instance=ExtResource("6_v3hs3")]
+visible = false

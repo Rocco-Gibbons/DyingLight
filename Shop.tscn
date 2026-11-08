@@ -1,0 +1,779 @@
+[gd_scene format=3 uid="uid://c7uj7smn2nc7u"]
+
+[ext_resource type="Texture2D" uid="uid://jwg7jk2yu6ip" path="res://assets/menu_background.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cvejfmiwgtay1" path="res://assets/parchment.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://5oh1vh6rl4pv" path="res://assets/title_screen_ui/text/shop.png" id="3"]
+[ext_resource type="Script" uid="uid://bd6h03uiy8wh0" path="res://Shop.cs" id="4"]
+[ext_resource type="Texture2D" uid="uid://8e0jk6u8xoq4" path="res://assets/shop_ui/info.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bssljka2hxo0o" path="res://assets/shop_ui/compass.png" id="6"]
+[ext_resource type="FontFile" uid="uid://bmrmoksi0ufdb" path="res://assets/Tiny5Duo-VariableFont_BLED,JITT,ROND,wdth,wght.ttf" id="7"]
+[ext_resource type="Texture2D" uid="uid://lmqln1nr35dg" path="res://assets/shop_ui/torch.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://p1wcpv2mu3qj" path="res://assets/shop_ui/chalk.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dwmmmuuyeyvtf" path="res://assets/shop_ui/skeletonKey.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://8q33h3ciexjl" path="res://assets/shop_ui/speedPotion.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://b62d3s17ec601" path="res://assets/shop_ui/detector.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://brug54j7q00ty" path="res://assets/shop_ui/disarmKit.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://cxnjb3s7mx25w" path="res://assets/shop_ui/magnifyingGlass.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://wi05fmy0654g" path="res://assets/shop_ui/paper.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://dh7uqrxvnha4q" path="res://assets/parchmentInfo.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://bv8122iv8oedp" path="res://assets/shop_ui/buyIcon.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://wvuwuvjx41jb" path="res://assets/shop_ui/close.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://c0n7l8mxrb7nf" path="res://assets/back_arrow.png" id="19"]
+
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("7")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("7")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+
+[node name="Shop" type="MarginContainer" unique_id=183557418]
+offset_right = 288.0
+offset_bottom = 224.0
+pivot_offset = Vector2(-189, -27)
+script = ExtResource("4")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2015038043]
+layout_mode = 2
+texture = ExtResource("1")
+
+[node name="SceneContainer" type="CenterContainer" parent="." unique_id=221185505]
+layout_mode = 2
+
+[node name="Parchment" type="TextureRect" parent="SceneContainer" unique_id=1784111885]
+layout_mode = 2
+texture = ExtResource("2")
+
+[node name="ParchmentContainer" type="VBoxContainer" parent="SceneContainer/Parchment" unique_id=1337069034]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 21.0
+offset_right = 237.0
+offset_bottom = 195.0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer" unique_id=847853384]
+layout_mode = 2
+
+[node name="GoldCounter" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer" unique_id=1643922295]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("2")
+bbcode_enabled = true
+text = "temp"
+fit_content = true
+
+[node name="TitleContainer" type="CenterContainer" parent="SceneContainer/Parchment/ParchmentContainer" unique_id=1369235209]
+layout_mode = 2
+
+[node name="Title" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/TitleContainer" unique_id=1855168311]
+layout_mode = 2
+texture = ExtResource("3")
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer" unique_id=1059922782]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SceneContainer/Parchment/ParchmentContainer" unique_id=479823354]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer" unique_id=1700822365]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TorchUpgrade Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer" unique_id=618631512]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TorchUpgrade Container" unique_id=1795998115]
+layout_mode = 2
+
+[node name="Torch Upgrade" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TorchUpgrade Container" unique_id=637858587]
+layout_mode = 2
+texture = ExtResource("8")
+
+[node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TorchUpgrade Container" unique_id=2138467607]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Torch : $30"
+
+[node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TorchUpgrade Container" unique_id=292672680]
+layout_mode = 2
+texture_normal = ExtResource("5")
+
+[node name="Chalk Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer" unique_id=218833368]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Chalk Container" unique_id=1808640450]
+layout_mode = 2
+
+[node name="Chalk" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Chalk Container" unique_id=2070242324]
+layout_mode = 2
+texture = ExtResource("9")
+
+[node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Chalk Container" unique_id=2000309425]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Chalk: $50"
+
+[node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Chalk Container" unique_id=719580369]
+layout_mode = 2
+texture_normal = ExtResource("5")
+
+[node name="SkeletonKey Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer" unique_id=518688936]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SkeletonKey Container" unique_id=548283062]
+layout_mode = 2
+
+[node name="SkeletonKey" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SkeletonKey Container" unique_id=2085153557]
+layout_mode = 2
+texture = ExtResource("10")
+
+[node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SkeletonKey Container" unique_id=641638164]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Skeleton Key: $50"
+
+[node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SkeletonKey Container" unique_id=1574877093]
+layout_mode = 2
+texture_normal = ExtResource("5")
+
+[node name="SpeedUpgrade Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer" unique_id=346620036]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SpeedUpgrade Container" unique_id=1442902565]
+layout_mode = 2
+
+[node name="SpeedPotion" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SpeedUpgrade Container" unique_id=293557057]
+layout_mode = 2
+texture = ExtResource("11")
+stretch_mode = 2
+
+[node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SpeedUpgrade Container" unique_id=1797315658]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Speed Pot: $75"
+
+[node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SpeedUpgrade Container" unique_id=1158448449]
+layout_mode = 2
+texture_normal = ExtResource("5")
+
+[node name="ScavengeTool Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer" unique_id=1591204082]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ScavengeTool Container" unique_id=36359053]
+layout_mode = 2
+
+[node name="ScavengeTool" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ScavengeTool Container" unique_id=1843851435]
+layout_mode = 2
+texture = ExtResource("14")
+
+[node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ScavengeTool Container" unique_id=1181294446]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Mag. Glass: $75
+"
+
+[node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ScavengeTool Container" unique_id=1645032125]
+layout_mode = 2
+texture_normal = ExtResource("5")
+
+[node name="Compass Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer" unique_id=2013541732]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Compass Container" unique_id=302514858]
+layout_mode = 2
+
+[node name="Compass" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Compass Container" unique_id=1383890953]
+layout_mode = 2
+texture = ExtResource("6")
+
+[node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Compass Container" unique_id=619878023]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Compass: $100"
+
+[node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Compass Container" unique_id=1339944617]
+layout_mode = 2
+texture_normal = ExtResource("5")
+
+[node name="TrapDetector Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer" unique_id=1369472792]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDetector Container" unique_id=1288792143]
+layout_mode = 2
+
+[node name="TrapDetector" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDetector Container" unique_id=1268231008]
+layout_mode = 2
+texture = ExtResource("12")
+
+[node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDetector Container" unique_id=1586517678]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Trap Detector: $100"
+
+[node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDetector Container" unique_id=1646323578]
+layout_mode = 2
+texture_normal = ExtResource("5")
+
+[node name="TrapDisarmer Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer" unique_id=818440019]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDisarmer Container" unique_id=10620185]
+layout_mode = 2
+
+[node name="TrapDisarmer" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDisarmer Container" unique_id=727893968]
+layout_mode = 2
+texture = ExtResource("13")
+
+[node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDisarmer Container" unique_id=1420128886]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Disarm Kit: $100"
+
+[node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDisarmer Container" unique_id=545629141]
+layout_mode = 2
+texture_normal = ExtResource("5")
+
+[node name="ImproveDungeon Container" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer" unique_id=353397168]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ImproveDungeon Container" unique_id=431330944]
+layout_mode = 2
+
+[node name="ImproveDungeon" type="TextureRect" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ImproveDungeon Container" unique_id=1952992535]
+layout_mode = 2
+texture = ExtResource("15")
+
+[node name="ItemAndPrice" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ImproveDungeon Container" unique_id=288420247]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Better Loot: $200
+"
+
+[node name="InfoButton" type="TextureButton" parent="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ImproveDungeon Container" unique_id=1266723365]
+layout_mode = 2
+texture_normal = ExtResource("5")
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer" unique_id=483282049]
+layout_mode = 2
+
+[node name="BackArrowContainer" type="HBoxContainer" parent="SceneContainer/Parchment" unique_id=2124481650]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 21.0
+offset_right = 41.0
+offset_bottom = 46.0
+
+[node name="BackArrow" type="TextureButton" parent="SceneContainer/Parchment/BackArrowContainer" unique_id=480856760]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("19")
+
+[node name="InfoContainer" type="CenterContainer" parent="SceneContainer" unique_id=1044683739]
+layout_mode = 2
+
+[node name="CompassInfo" type="TextureRect" parent="SceneContainer/InfoContainer" unique_id=1398842143]
+visible = false
+layout_mode = 2
+texture = ExtResource("16")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/CompassInfo" unique_id=1987770189]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/CompassInfo/HBoxContainer" unique_id=1996164855]
+layout_mode = 2
+
+[node name="Compass Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/CompassInfo/HBoxContainer" unique_id=1957217301]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Compass: $100
+
+The compass is a tool that will direct you towards the entrance of the dungeon."
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/CompassInfo/HBoxContainer" unique_id=290874922]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/CompassInfo/HBoxContainer/VBoxContainer" unique_id=1025675349]
+layout_mode = 2
+
+[node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/CompassInfo/HBoxContainer/VBoxContainer" unique_id=1871501173]
+layout_mode = 2
+texture_normal = ExtResource("18")
+
+[node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/CompassInfo/HBoxContainer/VBoxContainer" unique_id=1824181612]
+layout_mode = 2
+texture_normal = ExtResource("17")
+
+[node name="ChalkInfo" type="TextureRect" parent="SceneContainer/InfoContainer" unique_id=1431884375]
+visible = false
+layout_mode = 2
+texture = ExtResource("16")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/ChalkInfo" unique_id=999343174]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/ChalkInfo/HBoxContainer" unique_id=689807715]
+layout_mode = 2
+
+[node name="Chalk Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/ChalkInfo/HBoxContainer" unique_id=957059482]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Chalk: $50
+
+The chalk is a tool that will allow you to mark where you have been in the dungeon. Beware, the chalk may snap."
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/ChalkInfo/HBoxContainer" unique_id=444114821]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/ChalkInfo/HBoxContainer/VBoxContainer" unique_id=1974985291]
+layout_mode = 2
+
+[node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/ChalkInfo/HBoxContainer/VBoxContainer" unique_id=955216758]
+layout_mode = 2
+texture_normal = ExtResource("18")
+
+[node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/ChalkInfo/HBoxContainer/VBoxContainer" unique_id=1631246350]
+layout_mode = 2
+texture_normal = ExtResource("17")
+
+[node name="TorchInfo" type="TextureRect" parent="SceneContainer/InfoContainer" unique_id=1271992310]
+visible = false
+layout_mode = 2
+texture = ExtResource("16")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/TorchInfo" unique_id=1138935512]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/TorchInfo/HBoxContainer" unique_id=287085419]
+layout_mode = 2
+
+[node name="Torch Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/TorchInfo/HBoxContainer" unique_id=808404198]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Torch: $30
+
+This is an upgrade to your torch and will allow it to burn for longer whilst in the dungeon."
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/TorchInfo/HBoxContainer" unique_id=641427828]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/TorchInfo/HBoxContainer/VBoxContainer" unique_id=1332632905]
+layout_mode = 2
+
+[node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/TorchInfo/HBoxContainer/VBoxContainer" unique_id=1314692005]
+layout_mode = 2
+texture_normal = ExtResource("18")
+
+[node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/TorchInfo/HBoxContainer/VBoxContainer" unique_id=470465533]
+layout_mode = 2
+texture_normal = ExtResource("17")
+
+[node name="KeyInfo" type="TextureRect" parent="SceneContainer/InfoContainer" unique_id=162791658]
+visible = false
+layout_mode = 2
+texture = ExtResource("16")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/KeyInfo" unique_id=781327891]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/KeyInfo/HBoxContainer" unique_id=1809872439]
+layout_mode = 2
+
+[node name="Key Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/KeyInfo/HBoxContainer" unique_id=922440413]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Skeleton3D Key: $50
+
+This consumable key will allow you to open a chest within the dungeon for the chance to earn more gold."
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/KeyInfo/HBoxContainer" unique_id=2073915559]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/KeyInfo/HBoxContainer/VBoxContainer" unique_id=770736480]
+layout_mode = 2
+
+[node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/KeyInfo/HBoxContainer/VBoxContainer" unique_id=2015749960]
+layout_mode = 2
+texture_normal = ExtResource("18")
+
+[node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/KeyInfo/HBoxContainer/VBoxContainer" unique_id=592361168]
+layout_mode = 2
+texture_normal = ExtResource("17")
+
+[node name="SpeedInfo" type="TextureRect" parent="SceneContainer/InfoContainer" unique_id=722437859]
+visible = false
+layout_mode = 2
+texture = ExtResource("16")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/SpeedInfo" unique_id=249829655]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/SpeedInfo/HBoxContainer" unique_id=1425311884]
+layout_mode = 2
+
+[node name="Speed Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/SpeedInfo/HBoxContainer" unique_id=928824548]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Speed Potion: $75
+
+This consumable potion will give you increased movement speed for one dungeon dive."
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/SpeedInfo/HBoxContainer" unique_id=1242231569]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/SpeedInfo/HBoxContainer/VBoxContainer" unique_id=573727727]
+layout_mode = 2
+
+[node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/SpeedInfo/HBoxContainer/VBoxContainer" unique_id=474024789]
+layout_mode = 2
+texture_normal = ExtResource("18")
+
+[node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/SpeedInfo/HBoxContainer/VBoxContainer" unique_id=1326987174]
+layout_mode = 2
+texture_normal = ExtResource("17")
+
+[node name="TrapDetectorInfo" type="TextureRect" parent="SceneContainer/InfoContainer" unique_id=1492049119]
+visible = false
+layout_mode = 2
+texture = ExtResource("16")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/TrapDetectorInfo" unique_id=1163526376]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/TrapDetectorInfo/HBoxContainer" unique_id=1851958510]
+layout_mode = 2
+
+[node name="Detector Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/TrapDetectorInfo/HBoxContainer" unique_id=247809481]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Trap Detector: $100
+
+This item will will highlight any traps in a room, allowing you to avoid them and survive another dive."
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/TrapDetectorInfo/HBoxContainer" unique_id=2031019451]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/TrapDetectorInfo/HBoxContainer/VBoxContainer" unique_id=1679248711]
+layout_mode = 2
+
+[node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/TrapDetectorInfo/HBoxContainer/VBoxContainer" unique_id=319241909]
+layout_mode = 2
+texture_normal = ExtResource("18")
+
+[node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/TrapDetectorInfo/HBoxContainer/VBoxContainer" unique_id=837360644]
+layout_mode = 2
+texture_normal = ExtResource("17")
+
+[node name="TrapDisarmerInfo" type="TextureRect" parent="SceneContainer/InfoContainer" unique_id=660131198]
+visible = false
+layout_mode = 2
+texture = ExtResource("16")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/TrapDisarmerInfo" unique_id=187065527]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/TrapDisarmerInfo/HBoxContainer" unique_id=1570151931]
+layout_mode = 2
+
+[node name="Disarmer Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/TrapDisarmerInfo/HBoxContainer" unique_id=81793547]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Disarm Kit: $100
+
+This item will will allow you to disarm any traps you can find in a room so you can pass by them safely."
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/TrapDisarmerInfo/HBoxContainer" unique_id=1172812991]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/TrapDisarmerInfo/HBoxContainer/VBoxContainer" unique_id=626770546]
+layout_mode = 2
+
+[node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/TrapDisarmerInfo/HBoxContainer/VBoxContainer" unique_id=706495446]
+layout_mode = 2
+texture_normal = ExtResource("18")
+
+[node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/TrapDisarmerInfo/HBoxContainer/VBoxContainer" unique_id=740033420]
+layout_mode = 2
+texture_normal = ExtResource("17")
+
+[node name="ScavengeInfo" type="TextureRect" parent="SceneContainer/InfoContainer" unique_id=1150302068]
+visible = false
+layout_mode = 2
+texture = ExtResource("16")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/ScavengeInfo" unique_id=392083145]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/ScavengeInfo/HBoxContainer" unique_id=94362961]
+layout_mode = 2
+
+[node name="Scavenge Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/ScavengeInfo/HBoxContainer" unique_id=1340087603]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Magnifying Glass: $75
+
+This tool will allow you to investigate objects on the dungeon floor and possibly get some more gold."
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/ScavengeInfo/HBoxContainer" unique_id=1224324087]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/ScavengeInfo/HBoxContainer/VBoxContainer" unique_id=776855593]
+layout_mode = 2
+
+[node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/ScavengeInfo/HBoxContainer/VBoxContainer" unique_id=463187267]
+layout_mode = 2
+texture_normal = ExtResource("18")
+
+[node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/ScavengeInfo/HBoxContainer/VBoxContainer" unique_id=954714867]
+layout_mode = 2
+texture_normal = ExtResource("17")
+
+[node name="ImproveDungeonInfo" type="TextureRect" parent="SceneContainer/InfoContainer" unique_id=613911535]
+visible = false
+layout_mode = 2
+texture = ExtResource("16")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SceneContainer/InfoContainer/ImproveDungeonInfo" unique_id=156110990]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 244.0
+offset_bottom = 99.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/ImproveDungeonInfo/HBoxContainer" unique_id=1871524324]
+layout_mode = 2
+
+[node name="Key Information" type="RichTextLabel" parent="SceneContainer/InfoContainer/ImproveDungeonInfo/HBoxContainer" unique_id=911227014]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
+Better Loot: $200
+
+This upgrade will improve the amount of loot you can obtain in a single dungeon dive. However, it may make the dungeon more dangerous."
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SceneContainer/InfoContainer/ImproveDungeonInfo/HBoxContainer" unique_id=2023545472]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/InfoContainer/ImproveDungeonInfo/HBoxContainer/VBoxContainer" unique_id=1988073665]
+layout_mode = 2
+
+[node name="Close" type="TextureButton" parent="SceneContainer/InfoContainer/ImproveDungeonInfo/HBoxContainer/VBoxContainer" unique_id=466493027]
+layout_mode = 2
+texture_normal = ExtResource("18")
+
+[node name="Buy" type="TextureButton" parent="SceneContainer/InfoContainer/ImproveDungeonInfo/HBoxContainer/VBoxContainer" unique_id=884742287]
+layout_mode = 2
+texture_normal = ExtResource("17")
+
+[connection signal="pressed" from="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TorchUpgrade Container/InfoButton" to="." method="TorchInfoButtonPressed"]
+[connection signal="pressed" from="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Chalk Container/InfoButton" to="." method="ChalkInfoButtonPressed"]
+[connection signal="pressed" from="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SkeletonKey Container/InfoButton" to="." method="KeyInfoButtonPressed"]
+[connection signal="pressed" from="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/SpeedUpgrade Container/InfoButton" to="." method="SpeedInfoButtonPressed"]
+[connection signal="pressed" from="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ScavengeTool Container/InfoButton" to="." method="ScavengeInfoButtonPressed"]
+[connection signal="pressed" from="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/Compass Container/InfoButton" to="." method="CompassInfoButtonPressed"]
+[connection signal="pressed" from="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDetector Container/InfoButton" to="." method="DetectInfoButtonPressed"]
+[connection signal="pressed" from="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/TrapDisarmer Container/InfoButton" to="." method="DisarmInfoButtonPressed"]
+[connection signal="pressed" from="SceneContainer/Parchment/ParchmentContainer/ScrollContainer/VBoxContainer/ImproveDungeon Container/InfoButton" to="." method="ImproveDungeonInfoButtonPressed"]
+[connection signal="pressed" from="SceneContainer/Parchment/BackArrowContainer/BackArrow" to="." method="GoBackFromShop"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/CompassInfo/HBoxContainer/VBoxContainer/Close" to="." method="CompassCloseButtonPressed"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/CompassInfo/HBoxContainer/VBoxContainer/Buy" to="." method="PurchaseCompass"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/ChalkInfo/HBoxContainer/VBoxContainer/Close" to="." method="ChalkCloseButtonPressed"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/ChalkInfo/HBoxContainer/VBoxContainer/Buy" to="." method="PurchaseChalk"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/TorchInfo/HBoxContainer/VBoxContainer/Close" to="." method="TorchCloseButtonPressed"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/TorchInfo/HBoxContainer/VBoxContainer/Buy" to="." method="PurchaseTorchUpgrade"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/KeyInfo/HBoxContainer/VBoxContainer/Close" to="." method="KeyCloseButtonPressed"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/KeyInfo/HBoxContainer/VBoxContainer/Buy" to="." method="PurchaseKey"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/SpeedInfo/HBoxContainer/VBoxContainer/Close" to="." method="SpeedCloseButtonPressed"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/SpeedInfo/HBoxContainer/VBoxContainer/Buy" to="." method="PurchaseSpeedPotion"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/TrapDetectorInfo/HBoxContainer/VBoxContainer/Close" to="." method="DetectorCloseButtonPressed"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/TrapDetectorInfo/HBoxContainer/VBoxContainer/Buy" to="." method="PurchaseTrapDetector"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/TrapDisarmerInfo/HBoxContainer/VBoxContainer/Close" to="." method="DisarmCloseButtonPressed"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/TrapDisarmerInfo/HBoxContainer/VBoxContainer/Buy" to="." method="PurchaseTrapDisarmer"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/ScavengeInfo/HBoxContainer/VBoxContainer/Close" to="." method="ScavengeCloseButtonPressed"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/ScavengeInfo/HBoxContainer/VBoxContainer/Buy" to="." method="PurchaseScavengeTool"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/ImproveDungeonInfo/HBoxContainer/VBoxContainer/Close" to="." method="ImproveDungeonCloseButtonPressed"]
+[connection signal="pressed" from="SceneContainer/InfoContainer/ImproveDungeonInfo/HBoxContainer/VBoxContainer/Buy" to="." method="PurchaseDungeonUpgrade"]
