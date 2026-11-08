@@ -29,6 +29,9 @@ public class Shop : MarginContainer
 		gold_label.Clear();
 		gold_label.BbcodeText = $"[right][color=black]${john.gold}  [/color][/right]";
 		
+		var backButton = GetNode<TextureButton>("SceneContainer/Parchment/BackArrowContainer/BackArrow");
+		backButton.Connect("pressed", this, nameof(BackArrowPressed));
+		
 
 	}
 	
@@ -350,8 +353,16 @@ public class Shop : MarginContainer
 		john.dungeonLvl += 1;
 		john.gold -= cost;
 	}
+	
+	
+	private void BackArrowPressed()
+	{
+		GetTree().ChangeScene("res://CompletedRunMenu.tscn");
+	}
+
 
 }
+
 
 
 

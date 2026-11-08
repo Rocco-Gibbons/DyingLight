@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Inventory.cs" type="Script" id=1]
 [ext_resource path="res://assets/menu_background.png" type="Texture" id=2]
 [ext_resource path="res://assets/parchment.png" type="Texture" id=3]
 [ext_resource path="res://assets/completed_run_ui/inventory.png" type="Texture" id=4]
 [ext_resource path="res://assets/Tiny5Duo-VariableFont_BLED,JITT,ROND,wdth,wght.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/back_arrow.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 8
@@ -95,3 +96,18 @@ margin_top = 51.0
 margin_right = 187.0
 margin_bottom = 174.0
 size_flags_vertical = 3
+
+[node name="BackArrowContainer" type="HBoxContainer" parent="SceneContainer/Parchment"]
+margin_left = 16.0
+margin_top = 21.0
+margin_right = 41.0
+margin_bottom = 46.0
+
+[node name="BackArrow" type="TextureButton" parent="SceneContainer/Parchment/BackArrowContainer"]
+margin_right = 25.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 6 )
+
+[connection signal="pressed" from="SceneContainer/Parchment/BackArrowContainer/BackArrow" to="." method="BackArrowPressed"]

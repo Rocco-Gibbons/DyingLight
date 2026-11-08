@@ -10,7 +10,8 @@ public class Inventory : MarginContainer
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+		var backButton = GetNode<TextureButton>("SceneContainer/Parchment/BackArrowContainer/BackArrow");
+		backButton.Connect("pressed", this, nameof(BackArrowPressed));
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,4 +19,11 @@ public class Inventory : MarginContainer
 	{
 		if (Input.IsActionJustPressed("go_back")) GetTree().ChangeScene("res://CompletedRunMenu.tscn");      
 	}
+	
+	private void BackArrowPressed()
+	{
+		GetTree().ChangeScene("res://CompletedRunMenu.tscn");
+	}
 }
+
+
