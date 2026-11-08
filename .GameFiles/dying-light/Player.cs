@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collection.Generic;
 
 public partial class Player : CharacterBody2D
 {
@@ -9,11 +10,43 @@ public partial class Player : CharacterBody2D
 	AnimatedSprite2D playerAnimation;
 	private int speed;
 
+    public Dictionary<int, int> inventory = new Dictionary<int, int>;
+
+    public enum inventoryContents
+    {
+        NONE=0,
+        GOLD=1,
+        COMPASS=2,
+        CHALK=3,
+        TORCH_LVL=4,
+        KEY=5,
+        SPEED_POTION=6,
+        TRAP_DETECTOR=7,
+        TRAP_DISARMER=8,
+        SCAVENGE_TOOL=9,
+        DUNGEON_LVL=10
+    }
+
+    private void initialiseInventory()
+    {
+        inventory.Add(GOLD, 0);
+        inventory.Add(COMPASS, 0);
+        inventory.Add(CHALK, 0);
+        inventory.Add(TORCH_LVL, 0);
+        inventory.Add(KEY, 0);
+        inventory.Add(SPEED_POTION, 0);
+        inventory.Add(TRAP_DETECTOR, 0);
+        inventory.Add(TRAP_DISARMER, 0);
+        inventory.Add(SCAVENGE_TOOL, 0);
+        inventory.Add(DUNGEON_LVL, 0);
+    }
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		speed = 100;
 		playerAnimation = GetNode<AnimatedSprite2D>("PlayerAnimation");
+        initialiseInventory();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
