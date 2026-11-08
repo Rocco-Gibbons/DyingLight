@@ -1,6 +1,19 @@
 using Godot;
 using System;
 
+public class Character {
+	public int gold = 100;	
+	public int compass = 0;
+	public int chalk = 0;
+	public int torchLvl = 0;
+	public int key = 0;
+	public int speedPotion = 0;
+	public int detector = 0;
+	public int disarmer = 0;
+	public int scavenge = 0;
+	public int dungeonLvl = 0;
+}
+
 public class Shop : MarginContainer
 {
 	// Declare member variables here. Examples:
@@ -10,10 +23,13 @@ public class Shop : MarginContainer
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		Character john = new Character();
 		var gold_label = GetNode<RichTextLabel>("SceneContainer/Parchment/ParchmentContainer/GoldCounter");
 		gold_label.BbcodeEnabled = true;
 		gold_label.Clear();
-		gold_label.BbcodeText = "[right][color=black]$money  [/color][/right]";
+		gold_label.BbcodeText = $"[right][color=black]${john.gold}  [/color][/right]";
+		
+
 	}
 	
 	
@@ -35,6 +51,29 @@ public class Shop : MarginContainer
 	}	
 	private void PurchaseCompass()
 	{
+		/*
+			Logic:
+				Check if you already have the compass
+				If yes: Cannot buy again
+				
+				Check if you have enough money
+				If no: Cannot buy
+				
+				Take cost away from total amount of money
+				Add compass to character		
+		*/
+		int cost = 100;
+		
+		// John is a placeholder character to represent logic.
+		Character john = new Character();
+		
+		if (john.compass >= 1) return;
+		if (john.gold < cost) return;
+		
+		john.compass += 1;
+		john.gold -= cost;
+		GD.Print($"Bought Compass, {john.compass} {john.gold}");
+		
 	}
 	
 
@@ -50,6 +89,23 @@ public class Shop : MarginContainer
 	}
 	private void PurchaseChalk()
 	{
+		/*
+			Logic:
+				Check if you have enough money
+				If no: Cannot buy
+				
+				Take cost away from total amount of money
+				Add another chalk to character
+		*/
+		int cost = 50;
+
+		// John is a placeholder character to represent logic.
+		Character john = new Character();
+		
+		if (john.gold < cost) return;
+		
+		john.chalk += 1;
+		john.gold -= cost;
 	}
 
 
@@ -65,6 +121,27 @@ public class Shop : MarginContainer
 	}
 	private void PurchaseTorchUpgrade()
 	{
+		/*
+			Logic:
+				Check level of current torch
+				
+				Check if you have enough money for next level
+				If no: Cannot buy
+				
+				Take cost away from total amount of money
+				Upgrade torch level		
+		*/
+		int[] cost = {30, 75, 150};
+
+		// John is a placeholder character to represent logic.
+		Character john = new Character();
+		int torchLvl = john.torchLvl;
+		
+		if (john.torchLvl >= 2) return;
+		if (john.gold < cost[torchLvl]) return;
+		
+		john.torchLvl += 1;
+		john.gold -= cost[torchLvl];
 	}
 
 
@@ -80,6 +157,23 @@ public class Shop : MarginContainer
 	}
 	private void PurchaseKey()
 	{
+		/*
+			Logic:
+				Check if you have enough money
+				If no: Cannot buy
+				
+				Take cost away from total amount of money
+				Add another key to character	
+		*/
+		int cost = 50;
+
+		// John is a placeholder character to represent logic.
+		Character john = new Character();
+		
+		if (john.gold < cost) return;
+		
+		john.key += 1;
+		john.gold -= cost;
 	}
 
 
@@ -95,6 +189,23 @@ public class Shop : MarginContainer
 	}
 	private void PurchaseSpeedPotion()
 	{
+		/*
+			Logic:
+				Check if you have enough money 
+				If no: Cannot buy
+				
+				Take cost away from total amount of money
+				Add another speed potion to character		
+		*/
+		int cost = 75;
+
+		// John is a placeholder character to represent logic.
+		Character john = new Character();
+		
+		if (john.gold < cost) return;
+		
+		john.speedPotion += 1;
+		john.gold -= cost;
 	}
 
 
@@ -110,6 +221,27 @@ public class Shop : MarginContainer
 	}
 	private void PurchaseTrapDetector()
 	{
+		/*
+			Logic:
+				Check if you already have the trap detector
+				If yes: Cannot buy again
+				
+				Check if you have enough money
+				If no: Cannot buy
+				
+				Take cost away from total amount of money
+				Add trap detector to character		
+		*/
+		int cost = 100;
+		
+		// John is a placeholder character to represent logic.
+		Character john = new Character();
+		
+		if (john.detector >= 1) return;
+		if (john.gold < cost) return;
+		
+		john.detector += 1;
+		john.gold -= cost;
 	}
 
 
@@ -125,6 +257,27 @@ public class Shop : MarginContainer
 	}
 	private void PurchaseTrapDisarmer()
 	{
+		/*
+			Logic:
+				Check if you already have the trap disarmer
+				If yes: Cannot buy again
+				
+				Check if you have enough money
+				If no: Cannot buy
+				
+				Take cost away from total amount of money
+				Add trap disarmer to character		
+		*/
+		int cost = 100;
+		
+		// John is a placeholder character to represent logic.
+		Character john = new Character();
+		
+		if (john.disarmer >= 1) return;
+		if (john.gold < cost) return;
+		
+		john.disarmer += 1;
+		john.gold -= cost;
 	}
 
 
@@ -140,6 +293,27 @@ public class Shop : MarginContainer
 	}
 	private void PurchaseScavengeTool()
 	{
+		/*
+			Logic:
+				Check if you already have the scavenge tool
+				If yes: Cannot buy again
+				
+				Check if you have enough money
+				If no: Cannot buy
+				
+				Take cost away from total amount of money
+				Add scavenge tool to character		
+		*/
+		int cost = 75;
+		
+		// John is a placeholder character to represent logic.
+		Character john = new Character();
+		
+		if (john.scavenge >= 1) return;
+		if (john.gold < cost) return;
+		
+		john.scavenge += 1;
+		john.gold -= cost;
 	}
 
 
@@ -155,6 +329,25 @@ public class Shop : MarginContainer
 	}
 	private void PurchaseDungeonUpgrade()
 	{
+		/*
+			Logic:
+				Check level of current dungeon
+				
+				Check if you have enough money for next level
+				If no: Cannot buy
+				
+				Take cost away from total amount of money
+				Upgrade dungeon level		
+		*/
+		int cost = 200;
+		
+		// John is a placeholder character to represent logic.
+		Character john = new Character();
+		
+		if (john.gold < cost) return;
+		
+		john.dungeonLvl += 1;
+		john.gold -= cost;
 	}
 
 }

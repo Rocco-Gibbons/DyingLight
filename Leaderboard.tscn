@@ -1,11 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/parchment.png" type="Texture" id=1]
 [ext_resource path="res://assets/title_screen_ui/text/leaderboard_button.png" type="Texture" id=2]
+[ext_resource path="res://assets/Tiny5Duo-VariableFont_BLED,JITT,ROND,wdth,wght.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
 load_path = "res://.import/menu_background.png-9140b6ae777a904338f82bd60b11493e.stex"
+
+[sub_resource type="DynamicFont" id=2]
+size = 8
+font_data = ExtResource( 3 )
 
 [node name="Leaderboard" type="MarginContainer"]
 margin_right = 288.0
@@ -46,19 +51,28 @@ margin_right = 157.0
 margin_bottom = 15.0
 texture = ExtResource( 2 )
 
-[node name="LeaderboardText" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer"]
+[node name="LeaderboardEntry" type="HBoxContainer" parent="SceneContainer/Parchment/ParchmentContainer"]
 margin_top = 23.0
 margin_right = 186.0
-margin_bottom = 96.0
+margin_bottom = 33.0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer/LeaderboardEntry"]
+margin_bottom = 10.0
+
+[node name="LeaderboardText" type="RichTextLabel" parent="SceneContainer/Parchment/ParchmentContainer/LeaderboardEntry"]
+margin_left = 4.0
+margin_right = 186.0
+margin_bottom = 10.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
 bbcode_text = "lorem ipsum"
 text = "lorem ipsum"
-scroll_active = false
+fit_content_height = true
 
 [node name="AspectRatioContainer2" type="AspectRatioContainer" parent="SceneContainer/Parchment/ParchmentContainer"]
-margin_top = 100.0
+margin_top = 37.0
 margin_right = 186.0
 margin_bottom = 173.0
 size_flags_vertical = 3
