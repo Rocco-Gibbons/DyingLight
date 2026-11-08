@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 public partial class MainGame : Node2D
 {
 	[Export]
-    public PackedScene GameScene { get; set; }
+	public PackedScene GameScene { get; set; }
 
 	MainMenu mainMenu;
 

@@ -24,8 +24,8 @@ public partial class Player : CharacterBody2D
 		SCAVENGE_TOOL = 9,
 		DUNGEON_LVL = 10
 	}
-
-	public Dictionary<inventoryContents, int> inventory = new Dictionary<inventoryContents, int>{
+	
+	public Dictionary<inventoryContents, int> initialInv = new Dictionary<inventoryContents, int>{
 		[inventoryContents.POINTS] = 0,
 		[inventoryContents.GOLD] = 0,
 		[inventoryContents.COMPASS] = 0,
@@ -38,6 +38,13 @@ public partial class Player : CharacterBody2D
 		[inventoryContents.SCAVENGE_TOOL] = 0,
 		[inventoryContents.DUNGEON_LVL] = 0
 	};
+	
+	public void initInventory()
+	{
+		//player.Inventory = initialInv;
+	}
+
+
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
