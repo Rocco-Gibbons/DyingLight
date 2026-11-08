@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bf1vdfxljjkeb"]
+
+[ext_resource type="Texture2D" uid="uid://jwg7jk2yu6ip" path="res://assets/menu_background.png" id="1_40baj"]
+[ext_resource type="Script" uid="uid://1o4grotypoup" path="res://GameOver.cs" id="1_xl4ts"]
+[ext_resource type="Texture2D" uid="uid://6yqg4erv0e1q" path="res://assets/game_over.png" id="2_eksk4"]
+[ext_resource type="FontFile" uid="uid://bmrmoksi0ufdb" path="res://assets/Tiny5Duo-VariableFont_BLED,JITT,ROND,wdth,wght.ttf" id="3_xl4ts"]
+
+[node name="GameOverContainer" type="MarginContainer" unique_id=526018672]
+offset_right = 288.0
+offset_bottom = 224.0
+script = ExtResource("1_xl4ts")
+
+[node name="Background" type="TextureRect" parent="." unique_id=309843821]
+layout_mode = 2
+texture = ExtResource("1_40baj")
+
+[node name="SceneContainer" type="VBoxContainer" parent="Background" unique_id=1504263240]
+layout_mode = 0
+offset_top = 77.0
+offset_right = 287.0
+offset_bottom = 133.0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Background/SceneContainer" unique_id=2141469801]
+layout_mode = 2
+
+[node name="TitleContainer" type="CenterContainer" parent="Background/SceneContainer" unique_id=1292137680]
+layout_mode = 2
+
+[node name="Title" type="TextureRect" parent="Background/SceneContainer/TitleContainer" unique_id=46051712]
+layout_mode = 2
+texture = ExtResource("2_eksk4")
+stretch_mode = 2
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="Background/SceneContainer" unique_id=2022291171]
+layout_mode = 2
+
+[node name="PointsLabelContainer" type="CenterContainer" parent="Background/SceneContainer" unique_id=555906691]
+layout_mode = 2
+
+[node name="PointsLabel" type="RichTextLabel" parent="Background/SceneContainer/PointsLabelContainer" unique_id=715507060]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_xl4ts")
+bbcode_enabled = true
+text = "temp"
+fit_content = true
+horizontal_alignment = 1

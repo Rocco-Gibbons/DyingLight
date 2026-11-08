@@ -5,9 +5,15 @@ public partial class Inventory : MarginContainer
 {
 	[Signal]
 	public delegate void GoToRunMenuEventHandler();
+	
 
+	
 	private void GoBackFromInventory()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		EmitSignal(SignalName.GoToRunMenu);
 	}
 
@@ -23,5 +29,3 @@ public partial class Inventory : MarginContainer
 		if (Input.IsActionJustPressed("go_back")) GoBackFromInventory();      
 	}
 }
-
-

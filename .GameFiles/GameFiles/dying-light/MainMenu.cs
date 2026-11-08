@@ -8,19 +8,36 @@ public partial class MainMenu : MarginContainer
 
 	[Signal]
 	public delegate void StartNewGameEventHandler();
-
+	
+	//var player = new AudioStreamPlayer();
+	//AddChild(player);
+	//player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+	
 	private void NewGameButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		EmitSignal(SignalName.StartNewGame);
 	}
 
 	private void LeaderboardButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		EmitSignal(SignalName.GoToLeaderboard);
 	}
 	
-	private void QuitButtonPressed()
+	private async void QuitButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
+		await ToSignal(GetTree().CreateTimer(0.2), SceneTreeTimer.SignalName.Timeout);
 		GetTree().Quit();
 	}
 

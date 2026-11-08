@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Player : CharacterBody2D
 {
@@ -8,6 +9,35 @@ public partial class Player : CharacterBody2D
 
 	AnimatedSprite2D playerAnimation;
 	private int speed;
+	
+	public enum inventoryContents
+	{
+		POINTS = 0,
+		GOLD = 1,
+		COMPASS = 2,
+		CHALK = 3,
+		TORCH_LVL = 4,
+		KEY = 5,
+		SPEED_POTION = 6,
+		TRAP_DETECTOR = 7,
+		TRAP_DISARMER = 8,
+		SCAVENGE_TOOL = 9,
+		DUNGEON_LVL = 10
+	}
+
+	public Dictionary<inventoryContents, int> inventory = new Dictionary<inventoryContents, int>{
+		[inventoryContents.POINTS] = 0,
+		[inventoryContents.GOLD] = 0,
+		[inventoryContents.COMPASS] = 0,
+		[inventoryContents.CHALK] = 0,
+		[inventoryContents.TORCH_LVL] = 0,
+		[inventoryContents.KEY] = 0,
+		[inventoryContents.SPEED_POTION] = 0,
+		[inventoryContents.TRAP_DETECTOR] = 0,
+		[inventoryContents.TRAP_DISARMER] = 0,
+		[inventoryContents.SCAVENGE_TOOL] = 0,
+		[inventoryContents.DUNGEON_LVL] = 0
+	};
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
