@@ -12,7 +12,7 @@ public partial class Player : CharacterBody2D
 	
 	public enum inventoryContents
 	{
-		NONE = 0,
+		POINTS = 0,
 		GOLD = 1,
 		COMPASS = 2,
 		CHALK = 3,
@@ -25,28 +25,25 @@ public partial class Player : CharacterBody2D
 		DUNGEON_LVL = 10
 	}
 
-	public Dictionary<inventoryContents, int> inventory = new Dictionary<inventoryContents, int>();
-	
-	private void initialiseInventory() 
-	{
-		inventory.Add(inventoryContents.GOLD, 0);
-		inventory.Add(inventoryContents.COMPASS, 0);
-		inventory.Add(inventoryContents.CHALK, 0);
-		inventory.Add(inventoryContents.TORCH_LVL, 0);
-		inventory.Add(inventoryContents.KEY, 0);
-		inventory.Add(inventoryContents.SPEED_POTION, 0);
-		inventory.Add(inventoryContents.TRAP_DETECTOR, 0);
-		inventory.Add(inventoryContents.TRAP_DISARMER, 0);
-		inventory.Add(inventoryContents.SCAVENGE_TOOL, 0);
-		inventory.Add(inventoryContents.DUNGEON_LVL, 0);
-	}
+	public Dictionary<inventoryContents, int> inventory = new Dictionary<inventoryContents, int>{
+		[inventoryContents.POINTS] = 0,
+		[inventoryContents.GOLD] = 0,
+		[inventoryContents.COMPASS] = 0,
+		[inventoryContents.CHALK] = 0,
+		[inventoryContents.TORCH_LVL] = 0,
+		[inventoryContents.KEY] = 0,
+		[inventoryContents.SPEED_POTION] = 0,
+		[inventoryContents.TRAP_DETECTOR] = 0,
+		[inventoryContents.TRAP_DISARMER] = 0,
+		[inventoryContents.SCAVENGE_TOOL] = 0,
+		[inventoryContents.DUNGEON_LVL] = 0
+	};
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		speed = 100;
 		playerAnimation = GetNode<AnimatedSprite2D>("PlayerAnimation");
-		initialiseInventory();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

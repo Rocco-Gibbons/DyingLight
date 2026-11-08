@@ -24,24 +24,29 @@ public partial class CompletedRunMenu : MarginContainer
 
 	private void DiveAgainButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		EmitSignal(SignalName.RestartGame);
 	}
 	
 	private void InventoryButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		EmitSignal(SignalName.GoToInventory);
 	}
 
 	private void ShopButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		EmitSignal(SignalName.GoToShop);
 	}
 
 }
-
-
-
-
-
-
-

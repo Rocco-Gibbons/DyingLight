@@ -5,7 +5,7 @@ public partial class Shop : MarginContainer
 {
 	[Signal]
 	public delegate void GoToRunMenuEventHandler();
-
+		
 	private void GoBackFromShop()
 	{
 		EmitSignal(SignalName.GoToRunMenu);
@@ -17,9 +17,9 @@ public partial class Shop : MarginContainer
 		var gold_label = GetNode<RichTextLabel>("SceneContainer/Parchment/ParchmentContainer/GoldCounter");
 		gold_label.BbcodeEnabled = true;
 		gold_label.Clear();
-		
+		//GD.Print($"{.GOLD}");
 		// This is for you to do
-		//gold_label.Text = $"[center][color=black]${player.inventory[gold]}  [/color][/center]";
+		//gold_label.Text = $"[center][color=black]${player.inventory[inventoryContents.GOLD]}  [/color][/center]";
 	}
 	
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,11 +30,19 @@ public partial class Shop : MarginContainer
 	
 	private void CompassInfoButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/CompassInfo");
 		container.Show();
 	}
 	private void CompassCloseButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/CompassInfo");
 		container.Hide();
 	}	
@@ -68,11 +76,19 @@ public partial class Shop : MarginContainer
 
 	private void ChalkInfoButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/ChalkInfo");
 		container.Show();
 	}
 	private void ChalkCloseButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/ChalkInfo");
 		container.Hide();
 	}
@@ -100,11 +116,19 @@ public partial class Shop : MarginContainer
 
 	private void TorchInfoButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/TorchInfo");
 		container.Show();
 	}
 	private void TorchCloseButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/TorchInfo");
 		container.Hide();
 	}
@@ -136,11 +160,19 @@ public partial class Shop : MarginContainer
 
 	private void KeyInfoButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/KeyInfo");
 		container.Show();
 	}
 	private void KeyCloseButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/KeyInfo");
 		container.Hide();
 	}
@@ -168,11 +200,19 @@ public partial class Shop : MarginContainer
 
 	private void SpeedInfoButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/SpeedInfo");
 		container.Show();
 	}
 	private void SpeedCloseButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/SpeedInfo");
 		container.Hide();
 	}
@@ -200,11 +240,19 @@ public partial class Shop : MarginContainer
 
 	private void DetectInfoButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/TrapDetectorInfo");
 		container.Show();
 	}
 	private void DetectorCloseButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/TrapDetectorInfo");
 		container.Hide();
 	}
@@ -236,11 +284,19 @@ public partial class Shop : MarginContainer
 
 	private void DisarmInfoButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/TrapDisarmerInfo");
 		container.Show();
 	}
 	private void DisarmCloseButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/TrapDisarmerInfo");
 		container.Hide();
 	}
@@ -272,11 +328,19 @@ public partial class Shop : MarginContainer
 
 	private void ScavengeInfoButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/ScavengeInfo");
 		container.Show();
 	}
 	private void ScavengeCloseButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/ScavengeInfo");
 		container.Hide();
 	}
@@ -308,11 +372,19 @@ public partial class Shop : MarginContainer
 
 	private void ImproveDungeonInfoButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/ImproveDungeonInfo");
 		container.Show();
 	}
 	private void ImproveDungeonCloseButtonPressed()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/ImproveDungeonInfo");
 		container.Hide();
 	}
