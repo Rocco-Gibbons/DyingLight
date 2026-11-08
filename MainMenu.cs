@@ -14,10 +14,11 @@ public class MainMenu : MarginContainer
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+  	//public override void _Process(float delta)
+  	//{
+
+  	//}
+
 	private void LeaderboardButtonPressed()
 	{
 		GetTree().ChangeScene("res://Leaderboard.tscn");

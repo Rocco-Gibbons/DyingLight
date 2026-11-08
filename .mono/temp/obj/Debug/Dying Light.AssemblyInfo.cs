@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dying Light")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24b4cc476ba16730508b1c4fa3e9f0aded9b23c7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fe33e2f4ea03dbd3ebefbaa7a5d8d2a3e3f72a5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dying Light")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dying Light")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
