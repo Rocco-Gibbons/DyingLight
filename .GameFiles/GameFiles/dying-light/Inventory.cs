@@ -23,5 +23,3 @@ public partial class Inventory : MarginContainer
 		if (Input.IsActionJustPressed("go_back")) GoBackFromInventory();      
 	}
 }
-
-

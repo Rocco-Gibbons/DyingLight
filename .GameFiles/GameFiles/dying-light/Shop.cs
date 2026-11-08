@@ -1,19 +1,6 @@
 using Godot;
 using System;
 
-public partial class Character {
-	public int gold = 100;	
-	public int compass = 0;
-	public int chalk = 0;
-	public int torchLvl = 0;
-	public int key = 0;
-	public int speedPotion = 0;
-	public int detector = 0;
-	public int disarmer = 0;
-	public int scavenge = 0;
-	public int dungeonLvl = 0;
-}
-
 public partial class Shop : MarginContainer
 {
 	[Signal]
@@ -27,11 +14,12 @@ public partial class Shop : MarginContainer
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Character john = new Character();
 		var gold_label = GetNode<RichTextLabel>("SceneContainer/Parchment/ParchmentContainer/GoldCounter");
 		gold_label.BbcodeEnabled = true;
 		gold_label.Clear();
-		gold_label.Text = $"[center][color=black]${john.gold}  [/color][/center]";
+		
+		// This is for you to do
+		//gold_label.Text = $"[center][color=black]${player.inventory[gold]}  [/color][/center]";
 	}
 	
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -66,14 +54,14 @@ public partial class Shop : MarginContainer
 		int cost = 100;
 		
 		// John is a placeholder character to represent logic.
-		Character john = new Character();
-		
-		if (john.compass >= 1) return;
-		if (john.gold < cost) return;
-		
-		john.compass += 1;
-		john.gold -= cost;
-		GD.Print($"Bought Compass, {john.compass} {john.gold}");
+		//Character john = new Character();
+		//
+		//if (john.compass >= 1) return;
+		//if (john.gold < cost) return;
+		//
+		//john.compass += 1;
+		//john.gold -= cost;
+		//GD.Print($"Bought Compass, {john.compass} {john.gold}");
 		
 	}
 	
@@ -100,13 +88,13 @@ public partial class Shop : MarginContainer
 		*/
 		int cost = 50;
 
-		// John is a placeholder character to represent logic.
-		Character john = new Character();
-		
-		if (john.gold < cost) return;
-		
-		john.chalk += 1;
-		john.gold -= cost;
+		//// John is a placeholder character to represent logic.
+		//Character john = new Character();
+		//
+		//if (john.gold < cost) return;
+		//
+		//john.chalk += 1;
+		//john.gold -= cost;
 	}
 
 
@@ -134,15 +122,15 @@ public partial class Shop : MarginContainer
 		*/
 		int[] cost = {30, 75, 150};
 
-		// John is a placeholder character to represent logic.
-		Character john = new Character();
-		int torchLvl = john.torchLvl;
-		
-		if (john.torchLvl >= 2) return;
-		if (john.gold < cost[torchLvl]) return;
-		
-		john.torchLvl += 1;
-		john.gold -= cost[torchLvl];
+		//// John is a placeholder character to represent logic.
+		//Character john = new Character();
+		//int torchLvl = john.torchLvl;
+		//
+		//if (john.torchLvl >= 2) return;
+		//if (john.gold < cost[torchLvl]) return;
+		//
+		//john.torchLvl += 1;
+		//john.gold -= cost[torchLvl];
 	}
 
 
@@ -168,13 +156,13 @@ public partial class Shop : MarginContainer
 		*/
 		int cost = 50;
 
-		// John is a placeholder character to represent logic.
-		Character john = new Character();
-		
-		if (john.gold < cost) return;
-		
-		john.key += 1;
-		john.gold -= cost;
+		//// John is a placeholder character to represent logic.
+		//Character john = new Character();
+		//
+		//if (john.gold < cost) return;
+		//
+		//john.key += 1;
+		//john.gold -= cost;
 	}
 
 
@@ -198,15 +186,15 @@ public partial class Shop : MarginContainer
 				Take cost away from total amount of money
 				Add another speed potion to character		
 		*/
-		int cost = 75;
-
-		// John is a placeholder character to represent logic.
-		Character john = new Character();
-		
-		if (john.gold < cost) return;
-		
-		john.speedPotion += 1;
-		john.gold -= cost;
+		//int cost = 75;
+//
+		//// John is a placeholder character to represent logic.
+		//Character john = new Character();
+		//
+		//if (john.gold < cost) return;
+		//
+		//john.speedPotion += 1;
+		//john.gold -= cost;
 	}
 
 
@@ -233,16 +221,16 @@ public partial class Shop : MarginContainer
 				Take cost away from total amount of money
 				Add trap detector to character		
 		*/
-		int cost = 100;
-		
-		// John is a placeholder character to represent logic.
-		Character john = new Character();
-		
-		if (john.detector >= 1) return;
-		if (john.gold < cost) return;
-		
-		john.detector += 1;
-		john.gold -= cost;
+		//int cost = 100;
+		//
+		//// John is a placeholder character to represent logic.
+		//Character john = new Character();
+		//
+		//if (john.detector >= 1) return;
+		//if (john.gold < cost) return;
+		//
+		//john.detector += 1;
+		//john.gold -= cost;
 	}
 
 
@@ -269,16 +257,16 @@ public partial class Shop : MarginContainer
 				Take cost away from total amount of money
 				Add trap disarmer to character		
 		*/
-		int cost = 100;
-		
-		// John is a placeholder character to represent logic.
-		Character john = new Character();
-		
-		if (john.disarmer >= 1) return;
-		if (john.gold < cost) return;
-		
-		john.disarmer += 1;
-		john.gold -= cost;
+		//int cost = 100;
+		//
+		//// John is a placeholder character to represent logic.
+		//Character john = new Character();
+		//
+		//if (john.disarmer >= 1) return;
+		//if (john.gold < cost) return;
+		//
+		//john.disarmer += 1;
+		//john.gold -= cost;
 	}
 
 
@@ -305,16 +293,16 @@ public partial class Shop : MarginContainer
 				Take cost away from total amount of money
 				Add scavenge tool to character		
 		*/
-		int cost = 75;
-		
-		// John is a placeholder character to represent logic.
-		Character john = new Character();
-		
-		if (john.scavenge >= 1) return;
-		if (john.gold < cost) return;
-		
-		john.scavenge += 1;
-		john.gold -= cost;
+		//int cost = 75;
+		//
+		//// John is a placeholder character to represent logic.
+		//Character john = new Character();
+		//
+		//if (john.scavenge >= 1) return;
+		//if (john.gold < cost) return;
+		//
+		//john.scavenge += 1;
+		//john.gold -= cost;
 	}
 
 
@@ -340,43 +328,14 @@ public partial class Shop : MarginContainer
 				Take cost away from total amount of money
 				Upgrade dungeon level		
 		*/
-		int cost = 200;
-		
-		// John is a placeholder character to represent logic.
-		Character john = new Character();
-		
-		if (john.gold < cost) return;
-		
-		john.dungeonLvl += 1;
-		john.gold -= cost;
+		//int cost = 200;
+		//
+		//// John is a placeholder character to represent logic.
+		//Character john = new Character();
+		//
+		//if (john.gold < cost) return;
+		//
+		//john.dungeonLvl += 1;
+		//john.gold -= cost;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
