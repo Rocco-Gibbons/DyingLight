@@ -12,7 +12,7 @@ public partial class Player : CharacterBody2D
 	
 	public enum inventoryContents
 	{
-		NONE = 0,
+		POINTS = 0,
 		GOLD = 1,
 		COMPASS = 2,
 		CHALK = 3,
@@ -29,6 +29,7 @@ public partial class Player : CharacterBody2D
 	
 	private void initialiseInventory() 
 	{
+		inventory.Add(inventoryContents.POINTS, 0);
 		inventory.Add(inventoryContents.GOLD, 0);
 		inventory.Add(inventoryContents.COMPASS, 0);
 		inventory.Add(inventoryContents.CHALK, 0);
