@@ -5,7 +5,7 @@ public partial class Shop : MarginContainer
 {
 	[Signal]
 	public delegate void GoToRunMenuEventHandler();
-
+		
 	private void GoBackFromShop()
 	{
 		EmitSignal(SignalName.GoToRunMenu);
@@ -17,9 +17,9 @@ public partial class Shop : MarginContainer
 		var gold_label = GetNode<RichTextLabel>("SceneContainer/Parchment/ParchmentContainer/GoldCounter");
 		gold_label.BbcodeEnabled = true;
 		gold_label.Clear();
-		
+		//GD.Print($"{.GOLD}");
 		// This is for you to do
-		//gold_label.Text = $"[center][color=black]${player.inventory[gold]}  [/color][/center]";
+		//gold_label.Text = $"[center][color=black]${player.inventory[inventoryContents.GOLD]}  [/color][/center]";
 	}
 	
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
