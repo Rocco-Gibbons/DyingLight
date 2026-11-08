@@ -55,6 +55,9 @@ public partial class MainGame : Node2D
 		newGame.Show();
 		newGame.SetProcess(true);
 
+		newGame.timeMultiplyer = 1;
+		newGame.hasCompass = true;
+
 		newGame.GoToMainMenu += ShowMainMenu;
 		newGame.GoToRunMenu += ShowRunMenu;
 

@@ -16,7 +16,16 @@ public partial class Game : Node2D
 	[Export]
     public PackedScene RoomScene { get; set; }
 
-	Stopwatch gameTimer;
+	public int score;
+
+	float timeLeft;
+	public int timeMultiplyer;
+	RichTextLabel timeLabel;
+	TimeSpan remainingTime;
+
+	public bool hasCompass;
+
+	AnimatedSprite2D compass;
 
 	Random rn = new Random();
 
@@ -38,6 +47,61 @@ public partial class Game : Node2D
 	List<List<int>> roomRepresentation;
 	List<(int, int, Vector2I, Vector2I)> roomChanges; //index to change to, area1, area2
 
+	private void SetCompass()
+	{
+		compass.Show();
+		compass.MoveToFront();
+	}
+
+	private void UpdateCompass()
+	{
+		int startX = 0, startY = 0;
+		int currentX = 0, currentY = 0;
+		for (int x = 0; x < roomRepresentation.Count; x++)
+		{
+			for (int y = 0; y < roomRepresentation[0].Count; y++)
+			{
+				if (roomRepresentation[x][y] == currentRoomIndex)
+				{
+					currentX = x;
+					currentY = y;
+				}
+				if (roomRepresentation[x][y] == 0)
+				{
+					startX = x;
+					startY = y;
+				}
+			}
+		}
+		switch (rn.Next(0, 8))
+		{
+			case 0:
+				compass.Animation = "east";
+				break;
+			case 1:
+				compass.Animation = "west";
+				break;
+			case 2:
+				compass.Animation = "north";
+				break;
+			case 3:
+				compass.Animation = "south";
+				break;
+			case 4:
+				compass.Animation = "northeast";
+				break;
+			case 5:
+				compass.Animation = "northwest";
+				break;
+			case 6:
+				compass.Animation = "southeast";
+				break;
+			case 7:
+				compass.Animation = "southwest";
+				break;
+		}
+	}
+
 	private void ResetGameElements()
 	{
 		roomList = [];
@@ -45,6 +109,7 @@ public partial class Game : Node2D
 		roomRepresentation = [[-1, -1, -1], [-1, 0, -1], [-1, -100, -1]];
 		roomChanges = [];
 		player.Position = new Vector2(144, 112);
+		timeLeft = 30f * timeMultiplyer;
 	}
 
 	private void ExpandRepresentation(Room.Dir dir)
@@ -305,8 +370,6 @@ public partial class Game : Node2D
 	{
 		ResetGameElements();
 
-		gameTimer = Stopwatch.StartNew();
-
 		CreateDungeon(20);
 
 		currentRoomIndex = 0;
@@ -317,6 +380,11 @@ public partial class Game : Node2D
 
 		gameStarted = true;
 		SetProcess(true);
+
+		timeLabel.Show();
+		timeLabel.MoveToFront();
+
+		if (hasCompass) SetCompass();
 
 		overlay.Show();
 		overlay.MoveToFront();
@@ -377,11 +445,10 @@ public partial class Game : Node2D
 
 	private void GameOver(bool succeeded)
 	{
-		gameTimer.Stop();
 		gameStarted = false;
-		GD.Print(gameTimer.Elapsed.TotalSeconds);
 		if (succeeded)
 		{
+			score += rn.Next(1,1001);
 			EmitSignal(SignalName.GoToRunMenu);
 		}
 		else
@@ -390,9 +457,19 @@ public partial class Game : Node2D
 		}
 	}
 
+	private void GameTimerTimeout()
+	{
+		GameOver(false);
+	}
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		timeLabel = GetNode<RichTextLabel>("TimeLabel");
+
+		compass = GetNode<AnimatedSprite2D>("Compass");
+		compass.Hide();
+
 		player = GetNode<Player>("Player");
 		player.PlayerInteracts += OnPlayerInteract;
 
@@ -400,11 +477,52 @@ public partial class Game : Node2D
 		overlay.Hide();
 	}
 
+	private async void FlickerOverlay() //not working
+	{
+		overlay.Color = new Color(0, 0, 0, 1f);
+		await ToSignal(GetTree().CreateTimer(1), SceneTreeTimer.SignalName.Timeout);
+		overlay.Color = new Color(0, 0, 0, 0f);
+	}
+
+	private async void KillPLayerWithTrap()
+	{
+		roomList[currentRoomIndex].roomItems.SetProcess(false);
+		SetProcess(false);
+		player.SetProcess(false);
+		roomList[currentRoomIndex].roomItems.TriggerTrapAnimations();
+		await ToSignal(GetTree().CreateTimer(1), SceneTreeTimer.SignalName.Timeout);
+		SetProcess(true);
+		player.SetProcess(true);
+		GameOver(false);
+	}
+
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		if (gameStarted)
 		{
+			remainingTime = TimeSpan.FromSeconds(timeLeft);
+			timeLabel.Text = $"{remainingTime.Minutes:D2}:{remainingTime.Seconds:D2}:{remainingTime.Milliseconds:D3}";
+			timeLeft -= (float)delta;
+			if (timeLeft <= 0)
+			{
+				GameOver(false);
+			}
+			else if (timeLeft < 10)
+			{
+				if (rn.Next(0,31) == 0)
+				{
+					FlickerOverlay();
+				}
+			}
+
+			UpdateCompass();
+
+			if (GetPlayerPos() == roomList[currentRoomIndex].roomItems.trapLocation)
+			{
+				KillPLayerWithTrap();
+			}
+
 			int newIndex = CheckIfChangeRoom();
 			if (newIndex != -1)
 			{

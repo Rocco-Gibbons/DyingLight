@@ -3,6 +3,82 @@
 [ext_resource type="Script" uid="uid://26pylf5e1qg" path="res://Game.cs" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dxwgt01rxg0cs" path="res://room.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dv82lsv6nybq7" path="res://player.tscn" id="3_h2yge"]
+[ext_resource type="FontFile" uid="uid://bmrmoksi0ufdb" path="res://assets/Tiny5Duo-VariableFont_BLED,JITT,ROND,wdth,wght.ttf" id="4_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://dn7re13fbtipm" path="res://assets/compass_sprites/compass_east.png" id="5_iotsf"]
+[ext_resource type="Texture2D" uid="uid://d10t11laexak6" path="res://assets/compass_sprites/compass_north.png" id="6_lc2xo"]
+[ext_resource type="Texture2D" uid="uid://dwj3qb6wgvet" path="res://assets/compass_sprites/compass_northeast.png" id="7_215e1"]
+[ext_resource type="Texture2D" uid="uid://dws8rqgtfr70p" path="res://assets/compass_sprites/compass_northwest.png" id="8_7sc4i"]
+[ext_resource type="Texture2D" uid="uid://bc33866mponp8" path="res://assets/compass_sprites/compass_south.png" id="9_80cx4"]
+[ext_resource type="Texture2D" uid="uid://ds2ughrpyjeq3" path="res://assets/compass_sprites/compass_southeast.png" id="10_e8heu"]
+[ext_resource type="Texture2D" uid="uid://d3e1n6birqoah" path="res://assets/compass_sprites/compass_southwest.png" id="11_rvswv"]
+[ext_resource type="Texture2D" uid="uid://d32mfl43kwcxf" path="res://assets/compass_sprites/compass_west.png" id="12_boyg6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tbaod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_iotsf")
+}],
+"loop": 1,
+"name": &"east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_lc2xo")
+}],
+"loop": 1,
+"name": &"north",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_215e1")
+}],
+"loop": 1,
+"name": &"northeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_7sc4i")
+}],
+"loop": 1,
+"name": &"northwest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_80cx4")
+}],
+"loop": 1,
+"name": &"south",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_e8heu")
+}],
+"loop": 1,
+"name": &"southeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_rvswv")
+}],
+"loop": 1,
+"name": &"southwest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_boyg6")
+}],
+"loop": 1,
+"name": &"west",
+"speed": 5.0
+}]
 
 [node name="Game" type="Node2D" unique_id=622515406]
 script = ExtResource("1_0xm2m")
@@ -16,3 +92,16 @@ metadata/_edit_lock_ = true
 [node name="Player" parent="." unique_id=299776334 instance=ExtResource("3_h2yge")]
 visible = false
 position = Vector2(144, 112)
+
+[node name="TimeLabel" type="RichTextLabel" parent="." unique_id=44852595]
+offset_top = 208.0
+offset_right = 128.0
+offset_bottom = 224.0
+theme_override_fonts/normal_font = ExtResource("4_fc0e3")
+text = "Hello"
+scroll_active = false
+
+[node name="Compass" type="AnimatedSprite2D" parent="." unique_id=1295539182]
+position = Vector2(256, 16)
+sprite_frames = SubResource("SpriteFrames_tbaod")
+animation = &"west"

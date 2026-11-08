@@ -7,6 +7,8 @@ public partial class Items : Node2D
 {
 	Random rn = new Random();
 
+	public Vector2I trapLocation = new Vector2I(-1, -1);
+
 	public enum Sprites
 	{
 		NONE = 0,
@@ -18,11 +20,49 @@ public partial class Items : Node2D
 		BIG_BOX = 6,
 		SMALL_CHEST = 7,
 		BIG_CHEST = 8,
-		KEY = 9
+		KEY = 9,
+		TRAP = 10
 	}
 	
 	public Sprites[,] spriteMap;
 	
+	public TileMapLayer itemLayout;
+
+	public async void TriggerTrapAnimations()
+	{
+		itemLayout.SetCell(trapLocation, 1, new Vector2I(0, 0));
+		await ToSignal(GetTree().CreateTimer(0.01), SceneTreeTimer.SignalName.Timeout);
+		itemLayout.SetCell(trapLocation, 2, new Vector2I(0, 0));
+		await ToSignal(GetTree().CreateTimer(0.01), SceneTreeTimer.SignalName.Timeout);
+		itemLayout.SetCell(trapLocation, 3, new Vector2I(0, 0));
+		await ToSignal(GetTree().CreateTimer(0.01), SceneTreeTimer.SignalName.Timeout);
+		itemLayout.SetCell(trapLocation, 4, new Vector2I(0, 0));
+		await ToSignal(GetTree().CreateTimer(1.5), SceneTreeTimer.SignalName.Timeout);
+		itemLayout.SetCell(trapLocation, 4, new Vector2I(0, 0));
+		await ToSignal(GetTree().CreateTimer(0.2), SceneTreeTimer.SignalName.Timeout);
+		itemLayout.SetCell(trapLocation, 3, new Vector2I(0, 0));
+		await ToSignal(GetTree().CreateTimer(0.3), SceneTreeTimer.SignalName.Timeout);
+		itemLayout.SetCell(trapLocation, 2, new Vector2I(0, 0));
+		await ToSignal(GetTree().CreateTimer(0.3), SceneTreeTimer.SignalName.Timeout);
+		itemLayout.SetCell(trapLocation, 1, new Vector2I(0, 0));
+	}
+
+	private void SetTraps(int xStart, int xSize, int yStart, int ySize)
+	{
+		if (rn.Next(1,4) == 1) //1/3 chance
+		{
+			int x, y;
+			do
+			{
+				x = rn.Next(0, xSize - 2);
+				y = rn.Next(0, ySize - 2);
+			} while (spriteMap[x, y] != Sprites.NONE);
+			trapLocation = new Vector2I(x + xStart + 2, y + yStart + 2);
+			spriteMap[x, y] = Sprites.TRAP;
+			itemLayout.SetCell(trapLocation, 1, new Vector2I(0, 0));
+		}
+	}
+
 	private Vector2I SpriteCoords(Sprites spr)
 	{
 		switch (spr)
@@ -47,7 +87,7 @@ public partial class Items : Node2D
 				return new Vector2I(8, 8);
 		}
 	}
-	
+
 	public void ShowItems()
 	{
 		itemLayout.Show();
@@ -122,6 +162,7 @@ public partial class Items : Node2D
 				itemLayout.SetCell(new Vector2I(x + xStart + 2, y + yStart + 2), 0, SpriteCoords(newSpr));
 			}
 		}
+		SetTraps(xStart, xSize, yStart, ySize);
 	}
 
 	public void StartDoors(int x, int y)
@@ -130,7 +171,6 @@ public partial class Items : Node2D
 		itemLayout.SetCell(new Vector2I(x + 1, y), 0, new Vector2I(7, 6));
 	}
 
-	public TileMapLayer itemLayout;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
