@@ -34,11 +34,12 @@ public class Shop : MarginContainer
 	
 	
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(float delta)
+	{
+		if (Input.IsActionJustPressed("go_back")) GetTree().ChangeScene("res://CompletedRunMenu.tscn");      
+	}
+	
 	private void CompassInfoButtonPressed()
 	{
 		var container = GetNode<TextureRect>("SceneContainer/InfoContainer/CompassInfo");
