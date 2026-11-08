@@ -141,6 +141,7 @@ public partial class MainGame : Node2D
 		completedRunMenu.GoToInventory += ShowInventory;
 		completedRunMenu.RestartGame += RestartGame;
 		completedRunMenu.SetProcess(false);
+
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

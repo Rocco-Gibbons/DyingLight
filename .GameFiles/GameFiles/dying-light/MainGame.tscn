@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b8v1xvokyx47j" path="res://game.tscn" id="4_8dnxm"]
 [ext_resource type="PackedScene" uid="uid://cbpg0egfmawt2" path="res://CompletedRunMenu.tscn" id="5_8dnxm"]
 [ext_resource type="PackedScene" uid="uid://cidahqb6liqxa" path="res://Inventory.tscn" id="6_v3hs3"]
+[ext_resource type="PackedScene" uid="uid://bf1vdfxljjkeb" path="res://GameOver.tscn" id="8_v3hs3"]
 
 [node name="MainGame" type="Node2D" unique_id=1298471041]
 script = ExtResource("1_8qpgq")
@@ -24,4 +25,7 @@ visible = false
 visible = false
 
 [node name="Inventory" parent="." unique_id=314398771 instance=ExtResource("6_v3hs3")]
+visible = false
+
+[node name="GameOverContainer" parent="." unique_id=526018672 instance=ExtResource("8_v3hs3")]
 visible = false
