@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/title_screen_ui/text/continue_button.png" type="Texture" id=1]
 [ext_resource path="res://assets/title_screen_ui/text/new_game_button.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/title_screen_ui/torch/torch_3.png" type="Texture" id=8]
 [ext_resource path="res://assets/title_screen_ui/torch/torch_4.png" type="Texture" id=9]
 [ext_resource path="res://assets/menu_background.png" type="Texture" id=10]
+[ext_resource path="res://MainMenu.cs" type="Script" id=11]
 
 [sub_resource type="AnimatedTexture" id=1]
 flags = 4
@@ -25,6 +26,7 @@ frame_3/delay_sec = 0.0
 [node name="MainMenu" type="MarginContainer"]
 anchor_right = 0.2
 anchor_bottom = 0.2
+script = ExtResource( 11 )
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 288.0
@@ -133,3 +135,6 @@ margin_top = 72.0
 margin_right = 80.0
 margin_bottom = 152.0
 texture = SubResource( 1 )
+
+[connection signal="pressed" from="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer/LeaderboardContainer/Leaderboard" to="." method="LeaderboardButtonPressed"]
+[connection signal="pressed" from="SceneContainer/LeftSplitContainer/TextContainer/InnerTextContainer/ButtonContainer/ButtonListContainer/QuitContainer/Quit" to="." method="QuitButtonPressed"]
