@@ -14,7 +14,7 @@ public partial class Game : Node2D
 	public delegate void GoToRunMenuEventHandler();
 
 	[Export]
-    public PackedScene RoomScene { get; set; }
+	public PackedScene RoomScene { get; set; }
 
 	Stopwatch gameTimer;
 

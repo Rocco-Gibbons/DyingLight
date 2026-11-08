@@ -8,6 +8,10 @@ public partial class Leaderboard : MarginContainer
 
 	private void GoBackFromLeaderboard()
 	{
+		var player = new AudioStreamPlayer();
+		AddChild(player);
+		player.Stream = GD.Load<AudioStream>("res://assets/sfx/select.mp3");
+		player.Play();
 		EmitSignal(SignalName.GoToMainMenu);
 	}
 
@@ -23,6 +27,3 @@ public partial class Leaderboard : MarginContainer
 		if (Input.IsActionJustPressed("go_back")) GoBackFromLeaderboard();   
 	}
 }
-
-
-
