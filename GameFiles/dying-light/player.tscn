@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dv82lsv6nybq7"]
+
+[ext_resource type="Script" uid="uid://tpg4puru70rl" path="res://Player.cs" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://d4dd34nqf65qs" path="res://Resources/Free Pixel Dungeon Explorer 16x16/png_frames/idle_south/hero_16x16_idle_south1.png" id="2_b26j0"]
+[ext_resource type="Texture2D" uid="uid://c6icsbwqduu0c" path="res://Resources/Free Pixel Dungeon Explorer 16x16/png_frames/idle_south/hero_16x16_idle_south2.png" id="3_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://cmcuwmg487tgp" path="res://Resources/Free Pixel Dungeon Explorer 16x16/png_frames/idle_east/hero_16x16_idle_east1.png" id="4_nvl01"]
+[ext_resource type="Texture2D" uid="uid://hhyivovswqpc" path="res://Resources/Free Pixel Dungeon Explorer 16x16/png_frames/idle_east/hero_16x16_idle_east2.png" id="5_ivps1"]
+[ext_resource type="Texture2D" uid="uid://sqphx3tnn08p" path="res://Resources/Free Pixel Dungeon Explorer 16x16/png_frames/idle_west/hero_16x16_idle_west1.png" id="6_urp6f"]
+[ext_resource type="Texture2D" uid="uid://4oy54pv2scke" path="res://Resources/Free Pixel Dungeon Explorer 16x16/png_frames/idle_west/hero_16x16_idle_west2.png" id="7_bwjto"]
+[ext_resource type="Texture2D" uid="uid://ces4qq7c3l554" path="res://Resources/Free Pixel Dungeon Explorer 16x16/png_frames/idle_north/hero_16x16_idle_north1.png" id="8_606se"]
+[ext_resource type="Texture2D" uid="uid://dcx8jecm6o2vh" path="res://Resources/Free Pixel Dungeon Explorer 16x16/png_frames/idle_north/hero_16x16_idle_north2.png" id="9_u1c27"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aa2cp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b26j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n7ghd")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nvl01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ivps1")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_urp6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bwjto")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_606se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_u1c27")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y27xr"]
+radius = 8.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1895359]
+script = ExtResource("1_4flbx")
+
+[node name="PlayerAnimation" type="AnimatedSprite2D" parent="." unique_id=299577975]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_aa2cp")
+animation = &"down"
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=1922133312]
+shape = SubResource("CircleShape2D_y27xr")

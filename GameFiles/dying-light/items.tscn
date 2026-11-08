@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dcmxebh8xxc7j"]
+
+[ext_resource type="Script" uid="uid://d04w4m2oddb7j" path="res://Items.cs" id="1_u5wui"]
+[ext_resource type="Texture2D" uid="uid://d2gi5ggtyajc" path="res://Resources/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="2_aa2cp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nudqs"]
+texture = ExtResource("2_aa2cp")
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.3957615, -8, -1.2590103, -2.3381624, 5.2159023, -1.6187286, 3.7770329, 3.5971756, -2.877739, 5.935339, -6.2950554, 5.5756207, -8, -0.17985725)
+5:6/0 = 0
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 1.2590103, -6.2950544, 0.8992939, -2.6978807, 5.5756207, 0.8992939, 8, 0)
+6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 0.8992939, -8, -8, -3.057598, -8, 8, 8, 8)
+7:6/0 = 0
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 8, -3.4173155, 8, 8, -8, 8)
+8:6/0 = 0
+8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.35971832, -5.935337, 1.978445, -3.4173155, 0.8992939, -0.35971642, 5.935339, 3.5971756, 3.5971737, 5.3957634, -1.2590103, 1.978447, -3.5971746, 1.2590122, -5.2159033, -0.8992939)
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.6763268, -6.2950544, -0.8992939, -6.4749136, -2.1583042, -5.755479, -2.1583042, -1.4388695, -3.956892, -0.17985725, -8, 2.8777409, -2.3381634, 6.115198, 1.2590103, 4.4964695, 2.1583042, 0.8992939, 5.036045, -0.17985725, 5.935339, -4.856185)
+0:8/0 = 0
+0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.4964685, -3.7770329, 4.6763268, -3.4173155, 5.036045, 5.75548, -4.6763268, 5.75548)
+3:8/0 = 0
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.5756207, -5.5756197, 5.935339, -5.2159023, 6.115196, 5.75548, -5.3957615, 5.5756207)
+4:8/0 = 0
+4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.935338, 5.3957634, -5.935338, -2.5180216, -4.3166094, -5.036044, 3.956892, -5.5756197, 5.5756207, -2.3381624, 6.2950554, 5.215904)
+5:8/0 = 0
+5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.6763268, -1.7985859, -3.057598, -3.057598, 2.5180225, -3.4173155, 4.136751, -1.4388695, 5.036045, 5.3957634, -4.4964685, 5.5756207)
+8:8/0 = 0
+8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.856186, -0.5395756, 0.71943474, -0.71943474, 2.877739, -3.057598, 5.3957615, -1.2590103, 5.75548, 2.6978817, 3.2374573, 4.6763268, 0.17985916, 2.5180225, -3.5971746, 4.856186)
+
+[sub_resource type="TileSet" id="TileSet_aa2cp"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_nudqs")
+
+[node name="Items" type="Node2D" unique_id=1064637526]
+script = ExtResource("1_u5wui")
+
+[node name="ItemsLayout" type="TileMapLayer" parent="." unique_id=104549162]
+tile_set = SubResource("TileSet_aa2cp")

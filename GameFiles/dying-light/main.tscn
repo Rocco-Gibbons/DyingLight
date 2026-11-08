@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b8v1xvokyx47j"]
+
+[ext_resource type="Script" uid="uid://26pylf5e1qg" path="res://Main.cs" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dxwgt01rxg0cs" path="res://room.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dv82lsv6nybq7" path="res://player.tscn" id="3_h2yge"]
+
+[node name="Main" type="Node2D" unique_id=622515406]
+script = ExtResource("1_0xm2m")
+RoomScene = ExtResource("2_0xm2m")
+
+[node name="StartButton" type="Button" parent="." unique_id=1060766738]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Start Game"
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=1306465547]
+offset_right = 300.0
+offset_bottom = 300.0
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." unique_id=299776334 instance=ExtResource("3_h2yge")]
+position = Vector2(124, 95)
+
+[connection signal="pressed" from="StartButton" to="." method="StartButtonPressed"]
